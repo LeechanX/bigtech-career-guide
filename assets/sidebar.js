@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  /*
-   * =========================
-   * Sidebar
-   * =========================
-   */
+  /* =========================
+     Sidebar
+     ========================= */
 
   const sidebar = document.getElementById("site-sidebar");
 
@@ -41,18 +39,16 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
-  /*
-   * =========================
-   * Top navigation
-   *
-   * Behavior:
-   * 1. Click a category -> open it.
-   * 2. Click another category -> close the previous one.
-   * 3. Move pointer outside the category -> close it.
-   * 4. Move from summary into submenu -> keep it open.
-   * 5. Click a submenu link -> normal navigation.
-   * =========================
-   */
+  /* =========================
+     顶部导航
+
+     目标：
+     - 点击一级导航：打开
+     - 点击另一个一级导航：切换
+     - 鼠标离开当前一级导航及其二级菜单：关闭
+     - 鼠标离开整个 nav：全部关闭
+     - 点击页面其他地方：全部关闭
+     ========================= */
 
   const nav = document.querySelector("header nav");
 
@@ -60,60 +56,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const menus = Array.from(nav.querySelectorAll("details"));
 
+  function closeAll(exceptMenu) {
+    menus.forEach(function (menu) {
+      if (menu !== exceptMenu) {
+        menu.removeAttribute("open");
+        menu.classList.remove("is-open");
+      }
+    });
+  }
+
   menus.forEach(function (menu) {
     const summary = menu.querySelector("summary");
 
     if (!summary) return;
 
     summary.addEventListener("click", function () {
-      menus.forEach(function (otherMenu) {
-        if (otherMenu !== menu) {
-          otherMenu.removeAttribute("open");
-        }
-      });
+      const wasOpen = menu.classList.contains("is-open");
 
-      /*
-       * <details> toggles itself automatically after this event.
-       * No manual preventDefault is needed.
-       */
+      closeAll();
+
+      if (!wasOpen) {
+        menu.setAttribute("open", "");
+        menu.classList.add("is-open");
+      } else {
+        menu.removeAttribute("open");
+        menu.classList.remove("is-open");
+      }
     });
 
+    /*
+     * 这里使用 mouseleave，而不是 mouseout。
+     * mouseleave 不会因为鼠标从 summary 移到二级菜单
+     * 而误触发，因此可以正常进入二级菜单。
+     */
     menu.addEventListener("mouseleave", function () {
       menu.removeAttribute("open");
+      menu.classList.remove("is-open");
+    });
+
+    /*
+     * 鼠标进入另一个一级导航时，关闭其他菜单。
+     */
+    menu.addEventListener("mouseenter", function () {
+      closeAll(menu);
     });
   });
 
   /*
-   * If the user clicks anywhere outside the navigation,
-   * close every open menu immediately.
+   * 鼠标彻底离开顶部导航区域：全部收起。
+   */
+  nav.addEventListener("mouseleave", function () {
+    closeAll();
+  });
+
+  /*
+   * 点击导航外部：全部收起。
    */
   document.addEventListener("click", function (event) {
     if (!nav.contains(event.target)) {
-      menus.forEach(function (menu) {
-        menu.removeAttribute("open");
-      });
+      closeAll();
     }
   });
 
   /*
-   * Keyboard accessibility:
-   * Escape closes all menus and returns focus to the active summary.
+   * ESC：关闭全部菜单。
    */
   document.addEventListener("keydown", function (event) {
-    if (event.key !== "Escape") return;
-
-    let activeMenu = null;
-
-    menus.forEach(function (menu) {
-      if (menu.open) {
-        activeMenu = menu;
-        menu.removeAttribute("open");
-      }
-    });
-
-    if (activeMenu) {
-      const activeSummary = activeMenu.querySelector("summary");
-      if (activeSummary) activeSummary.focus();
+    if (event.key === "Escape") {
+      closeAll();
     }
   });
 });

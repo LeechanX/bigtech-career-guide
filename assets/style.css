@@ -11,24 +11,12 @@ body {
   line-height: 1.8;
 }
 
-a {
-  color: #1769aa;
-  text-decoration: none;
-}
+a { color: #1769aa; text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:hover {
-  text-decoration: underline;
-}
+.container { width: min(920px, 92%); margin: 0 auto; }
 
-.container {
-  width: min(920px, 92%);
-  margin: 0 auto;
-}
-
-header {
-  border-bottom: 1px solid #eee;
-  background: #fff;
-}
+header { border-bottom: 1px solid #eee; background: #fff; }
 
 .header-inner {
   width: min(1100px, 92%);
@@ -49,11 +37,7 @@ header {
   flex: 0 0 auto;
 }
 
-/* =========================
-   Top navigation
-   Click to open; leaving the
-   whole nav item closes it.
-   ========================= */
+/* ===== 顶部导航 ===== */
 
 nav {
   display: flex;
@@ -79,9 +63,7 @@ nav summary {
   user-select: none;
 }
 
-nav summary::-webkit-details-marker {
-  display: none;
-}
+nav summary::-webkit-details-marker { display: none; }
 
 nav summary::after {
   content: "⌄";
@@ -89,11 +71,6 @@ nav summary::after {
   margin-left: 5px;
   font-size: 12px;
   transform: translateY(-1px);
-  transition: transform .15s ease;
-}
-
-nav details[open] summary::after {
-  transform: translateY(-1px) rotate(180deg);
 }
 
 nav details[open] summary,
@@ -102,6 +79,11 @@ nav summary:hover {
   background: #f6f6f6;
 }
 
+/*
+ * 下拉菜单默认隐藏。
+ * 不再依赖 details[open] 单独决定显示，
+ * JS 会在鼠标离开导航项/整个 nav 时强制关闭。
+ */
 nav details > div {
   display: none;
   position: absolute;
@@ -116,15 +98,18 @@ nav details > div {
   box-shadow: 0 12px 32px rgba(0, 0, 0, .10);
 }
 
-/* Open while clicked OR while the pointer is over the item.
-   JS removes open as soon as the pointer leaves. */
-nav details[open] > div,
+nav details.is-open > div,
 nav details:hover > div {
   display: block;
 }
 
-nav details:not(:hover) > div {
-  display: none;
+nav details > div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9px;
+  height: 9px;
 }
 
 nav details > div a {
@@ -143,20 +128,7 @@ nav details > div a:hover {
   text-decoration: none;
 }
 
-/* Invisible bridge prevents the 8px visual gap from
-   causing accidental close while moving into submenu. */
-nav details > div::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -9px;
-  height: 9px;
-}
-
-/* =========================
-   Page layout
-   ========================= */
+/* ===== 页面 ===== */
 
 .page-layout {
   width: min(1200px, 92%);
@@ -167,9 +139,7 @@ nav details > div::before {
   align-items: start;
 }
 
-.page-main {
-  min-width: 0;
-}
+.page-main { min-width: 0; }
 
 .page-sidebar {
   min-width: 0;
@@ -177,15 +147,9 @@ nav details > div::before {
   top: 24px;
 }
 
-article {
-  padding: 56px 0 80px;
-}
+article { padding: 56px 0 80px; }
 
-.breadcrumb {
-  margin-bottom: 28px;
-  color: #777;
-  font-size: 14px;
-}
+.breadcrumb { margin-bottom: 28px; color: #777; font-size: 14px; }
 
 h1 {
   margin: 0 0 24px;
@@ -203,31 +167,12 @@ h1 {
   font-size: 18px;
 }
 
-h2 {
-  margin: 58px 0 20px;
-  font-size: 29px;
-  line-height: 1.35;
-}
+h2 { margin: 58px 0 20px; font-size: 29px; line-height: 1.35; }
+h3 { margin: 34px 0 12px; font-size: 21px; line-height: 1.45; }
+p { margin: 0 0 18px; }
 
-h3 {
-  margin: 34px 0 12px;
-  font-size: 21px;
-  line-height: 1.45;
-}
-
-p {
-  margin: 0 0 18px;
-}
-
-ul,
-ol {
-  margin: 12px 0 24px;
-  padding-left: 28px;
-}
-
-li {
-  margin-bottom: 9px;
-}
+ul, ol { margin: 12px 0 24px; padding-left: 28px; }
+li { margin-bottom: 9px; }
 
 .highlight {
   padding: 22px 24px;
@@ -237,9 +182,7 @@ li {
   background: #fafafa;
 }
 
-.highlight strong {
-  color: #111;
-}
+.highlight strong { color: #111; }
 
 .mistake {
   padding: 22px 24px;
@@ -248,14 +191,9 @@ li {
   border-radius: 8px;
 }
 
-.mistake h3 {
-  margin-top: 0;
-}
+.mistake h3 { margin-top: 0; }
 
-.table-wrap {
-  overflow-x: auto;
-  margin: 24px 0 30px;
-}
+.table-wrap { overflow-x: auto; margin: 24px 0 30px; }
 
 table {
   width: 100%;
@@ -264,17 +202,14 @@ table {
   font-size: 15px;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #ddd;
   padding: 13px 14px;
   text-align: left;
   vertical-align: top;
 }
 
-th {
-  background: #f6f6f6;
-}
+th { background: #f6f6f6; }
 
 .steps {
   counter-reset: step;
@@ -304,9 +239,7 @@ th {
   font-size: 14px;
 }
 
-/* =========================
-   Sidebar
-   ========================= */
+/* ===== Sidebar ===== */
 
 .sidebar-card {
   border: 1px solid #e5e5e5;
@@ -322,21 +255,11 @@ th {
   line-height: 1.4;
 }
 
-.sidebar-card p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.7;
-}
+.sidebar-card p { color: #666; font-size: 14px; line-height: 1.7; }
 
-.sidebar-benefits {
-  padding-left: 20px;
-  margin: 14px 0 18px;
-}
+.sidebar-benefits { padding-left: 20px; margin: 14px 0 18px; }
 
-.sidebar-benefits li {
-  margin-bottom: 6px;
-  font-size: 14px;
-}
+.sidebar-benefits li { margin-bottom: 6px; font-size: 14px; }
 
 .contact-card-image {
   display: block;
@@ -359,9 +282,7 @@ th {
   font-size: 14px;
 }
 
-.related-card a:last-child {
-  border-bottom: none;
-}
+.related-card a:last-child { border-bottom: none; }
 
 .related {
   margin-top: 60px;
@@ -369,10 +290,7 @@ th {
   border-top: 1px solid #eee;
 }
 
-.related a {
-  display: block;
-  margin-bottom: 10px;
-}
+.related a { display: block; margin-bottom: 10px; }
 
 footer {
   padding: 32px 0;
@@ -381,40 +299,13 @@ footer {
   font-size: 13px;
 }
 
-/* =========================
-   Responsive
-   ========================= */
-
 @media (max-width: 900px) {
-  .header-inner {
-    height: 58px;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .page-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .page-sidebar {
-    position: static;
-  }
-
-  article {
-    padding-top: 38px;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
-  .lead {
-    font-size: 16px;
-  }
+  .header-inner { height: 58px; }
+  nav { display: none; }
+  .page-layout { grid-template-columns: 1fr; }
+  .page-sidebar { position: static; }
+  article { padding-top: 38px; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 25px; }
+  .lead { font-size: 16px; }
 }
