@@ -42,16 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =========================
      顶部导航
 
-     目标：
-     - 点击一级导航：打开
-     - 点击另一个一级导航：切换
-     - 鼠标离开当前一级导航及其二级菜单：关闭
-     - 鼠标离开整个 nav：全部关闭
-     - 点击页面其他地方：全部关闭
+     行为：
+     1. 点击一级导航 -> 打开/关闭当前菜单
+     2. 点击另一个一级导航 -> 自动关闭之前的菜单
+     3. 鼠标离开当前一级导航及二级菜单 -> 自动关闭
+     4. 点击页面其他地方 -> 全部关闭
      ========================= */
 
   const nav = document.querySelector("header nav");
-
   if (!nav) return;
 
   const menus = Array.from(nav.querySelectorAll("details"));
@@ -60,67 +58,39 @@ document.addEventListener("DOMContentLoaded", function () {
     menus.forEach(function (menu) {
       if (menu !== exceptMenu) {
         menu.removeAttribute("open");
-        menu.classList.remove("is-open");
       }
     });
   }
 
   menus.forEach(function (menu) {
     const summary = menu.querySelector("summary");
-
     if (!summary) return;
 
     summary.addEventListener("click", function () {
-      const wasOpen = menu.classList.contains("is-open");
-
-      closeAll();
-
-      if (!wasOpen) {
-        menu.setAttribute("open", "");
-        menu.classList.add("is-open");
-      } else {
-        menu.removeAttribute("open");
-        menu.classList.remove("is-open");
-      }
+      // <details> 自己负责当前菜单的开关；
+      // 这里仅关闭其他一级菜单。
+      closeAll(menu);
     });
 
-    /*
-     * 这里使用 mouseleave，而不是 mouseout。
-     * mouseleave 不会因为鼠标从 summary 移到二级菜单
-     * 而误触发，因此可以正常进入二级菜单。
-     */
+    // 鼠标离开整个 details（包括其二级菜单）后关闭。
     menu.addEventListener("mouseleave", function () {
       menu.removeAttribute("open");
-      menu.classList.remove("is-open");
-    });
-
-    /*
-     * 鼠标进入另一个一级导航时，关闭其他菜单。
-     */
-    menu.addEventListener("mouseenter", function () {
-      closeAll(menu);
     });
   });
 
-  /*
-   * 鼠标彻底离开顶部导航区域：全部收起。
-   */
+  // 鼠标离开整个导航区域后关闭所有菜单。
   nav.addEventListener("mouseleave", function () {
     closeAll();
   });
 
-  /*
-   * 点击导航外部：全部收起。
-   */
+  // 点击导航以外区域后关闭所有菜单。
   document.addEventListener("click", function (event) {
     if (!nav.contains(event.target)) {
       closeAll();
     }
   });
 
-  /*
-   * ESC：关闭全部菜单。
-   */
+  // ESC 关闭所有菜单。
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closeAll();

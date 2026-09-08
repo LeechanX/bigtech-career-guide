@@ -63,7 +63,9 @@ nav summary {
   user-select: none;
 }
 
-nav summary::-webkit-details-marker { display: none; }
+nav summary::-webkit-details-marker {
+  display: none;
+}
 
 nav summary::after {
   content: "⌄";
@@ -71,6 +73,11 @@ nav summary::after {
   margin-left: 5px;
   font-size: 12px;
   transform: translateY(-1px);
+  transition: transform .15s ease;
+}
+
+nav details[open] summary::after {
+  transform: translateY(-1px) rotate(180deg);
 }
 
 nav details[open] summary,
@@ -80,36 +87,25 @@ nav summary:hover {
 }
 
 /*
- * 下拉菜单默认隐藏。
- * 不再依赖 details[open] 单独决定显示，
- * JS 会在鼠标离开导航项/整个 nav 时强制关闭。
+ * 二级菜单只由 <details open> 控制。
+ * 不使用 :hover 打开，避免鼠标移走后菜单又被 CSS 打开。
  */
 nav details > div {
   display: none;
   position: absolute;
   z-index: 1000;
-  top: calc(100% + 8px);
+  top: 100%;
   right: 0;
   width: 250px;
   padding: 8px;
   border: 1px solid #e5e5e5;
   border-radius: 10px;
   background: #fff;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, .10);
+  box-shadow: 0 12px 32px rgba(0, 0, .10);
 }
 
-nav details.is-open > div,
-nav details:hover > div {
+nav details[open] > div {
   display: block;
-}
-
-nav details > div::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -9px;
-  height: 9px;
 }
 
 nav details > div a {
