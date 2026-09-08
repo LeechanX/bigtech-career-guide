@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <div class="sidebar-card related-card">
         <h2>相关阅读</h2>
+        <a href="/guides/">留学生求职指南</a>
         <a href="/guides/international-student-bigtech-job/">留学生进大厂完整指南</a>
         <a href="/guides/return-to-china-job/">留学生回国求职</a>
         <a href="/guides/international-student-domestic-bigtech/">留学生如何进入国内大厂</a>
