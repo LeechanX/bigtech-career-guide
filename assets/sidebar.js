@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </ul>
 
       <img
-        src="/assets/contact-card.png"
+        src="/assets/contact_card.png"
         alt="BigTechCareer 求职咨询微信联系方式"
         class="contact-card-image"
       >
