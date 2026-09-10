@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 小红书求职情报｜职级薪资、推荐与高危避坑部门 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 小红书最新求职情报：R4/R5/R6 职级薪资对标、三餐全包与房补福利。动态交互对比 推荐算法/社区核心/基础架构 等推荐部门，避坑 频繁调整的创新实验组，提供 Feed流与高并发架构面试 SOP。"
+  >
+
+  <meta name="keywords" content="小红书薪资, 小红书职级对标, 小红书R5/R6, 小红书推荐算法, 小红书买手电商, 小红书加班强度, 小红书面试偏好">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/xiaohongshu/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="site-name" href="/">BigTechCareer</a>
+
+    <nav>
+      <details>
+        <summary>大厂情报</summary>
+        <div>
+          <a href="/companies/">国内外大厂总览</a>
+          <a href="/companies/bytedance/">字节跳动（推荐部门/风气/对标）</a>
+          <a href="/companies/tencent/">腾讯</a>
+          <a href="/companies/alibaba/">阿里巴巴</a>
+          <a href="/companies/xiaohongshu/">小红书</a>
+          <a href="/companies/google/">Google</a>
+          <a href="/companies/meta/">Meta</a>
+          <a href="/companies/amazon/">Amazon</a>
+          <a href="/companies/microsoft/">Microsoft</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>岗位题库</summary>
+        <div>
+          <a href="/interview/backend/">后端工程师（System Design / 高并发八股）</a>
+          <a href="/interview/client/">客户端工程师（iOS / Android / 性能优化）</a>
+          <a href="/interview/frontend/">前端工程师（渲染 / 异步设计）</a>
+          <a href="/interview/ai/">AI / Agent 工程师（RAG / LLM / 转岗路线）</a>
+          <a href="/interview/algorithm-project/">算法与项目深挖（LeetCode 频次 / 模板）</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>求职 SOP</summary>
+        <div>
+          <a href="/guides/international-student-job-timeline/">留学生求职 Timeline</a>
+          <a href="/guides/international-student-bigtech-job/">留学生进大厂完整指南</a>
+          <a href="/guides/return-to-china-job/">留学生回国求职 SOP</a>
+          <a href="/guides/international-student-internship/">大厂实习投递指南</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>1v1 辅导</summary>
+        <div>
+          <a href="/services/resume-refinement/">简历精修</a>
+          <a href="/services/mock-interview/">1v1 模拟面试（架构 / 项目深挖）</a>
+          <a href="/services/career-positioning/">投递策略与公司定位</a>
+          <a href="/services/offer-negotiation/">Offer 选择与薪资谈判</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>小红书（RED）求职情报百科</h1>
+          <p>
+            透视小红书内部真实风气与考核规则。提供<strong style="color: #2563eb;">职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">部门红黑榜动态矩阵</strong>，
+            帮你搞清 Pre-IPO 期权与福利待遇，锁定推荐算法与社区核心组，<strong style="color: #dc2626;">避开高频调整的试错组</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：职级薪资模拟器 -->
+      <section class="section">
+        <div class="container">
+          <h2>1. 小红书职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同职级对标（传统 R 职级或新扁平对标），查看现金 Package 构成与期权福利：</p>
+
+          <style>
+            .xh-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="xh-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchXhLevel('r4')">R4 (原应届 / 校招主力)</button>
+              <button class="level-btn" onclick="switchXhLevel('r5')">R5 (骨干 / 对标阿里P6+/字节2-2)</button>
+              <button class="level-btn" onclick="switchXhLevel('r6')">R6 (TL小组长 / 对标阿里P7+/字节3-1)</button>
+            </div>
+
+            <!-- R4 面板 -->
+            <div id="xh-panel-r4" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">35W - 52W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">福利 & 餐补</div>
+                  <div class="data-value">免费三薪餐 + 下午茶</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">就近房补补贴</div>
+                  <div class="data-value" style="color: #2563eb;">1,000 元 / 月（2-3公里内）</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- R5 面板 -->
+            <div id="xh-panel-r5" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 期权 Package</div>
+                  <div class="data-value" style="color: #059669;">65W - 100W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">Pre-IPO 期权归属</div>
+                  <div class="data-value">4 年解禁（看好上市溢价）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">年假与全薪病假</div>
+                  <div class="data-value" style="color: #2563eb;">5天福利年假 + 5天全薪病假</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- R6 面板 -->
+            <div id="xh-panel-r6" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 期权 Package</div>
+                  <div class="data-value" style="color: #059669;">110W - 170W+ / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">期权占比</div>
+                  <div class="data-value">30%+（高期权杠杆）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">团队管理与责任</div>
+                  <div class="data-value" style="color: #2563eb;">带 5-15 人小组 / 背业务 KPI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchXhLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('xh-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：部门红黑榜对比矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. 小红书部门红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看“推荐入坑”与“高危避坑”部门的技术栈与风气内幕：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchXhDept('recommend')">🟢 推荐投递部门（护城河/高增长/红利赛道）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchXhDept('avoid')">🔴 高危避坑部门（高频试错/高拉扯/高流失）</button>
+          </div>
+
+          <div class="dept-box">
+            <!-- 推荐部门面板 -->
+            <div id="xh-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">推荐算法 / Feed 流 / 社区双列引擎</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：小红书真正的核心技术护城河（图文/短视频推荐、社区冷启动）。<strong style="color: #059669;">算力与工程资源倾斜极大，技术积累硬，容易出成果与快速晋升</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">社区核心工程 / 买手电商与变现</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：小红书商业化变现与“买手电商”的主战场。<strong style="color: #059669;">业务增长猛，HC 与预算充沛，适合想拿业务战功的工程师</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">RED AI / 基础架构 (大模型与存储底座)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：负责万亿级图文向量检索、大模型应用与高性能存储底座。<strong style="color: #059669;">技术风气纯粹，背靠全局底座，相对避开前台业务拉扯</strong>。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 避坑部门面板 -->
+            <div id="xh-dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">频繁改方向的创新实验 / 工具孵化组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：<strong>高危重灾区！</strong> 小红书业务试错极快，半年出不了数据直接砍线。<strong style="color: #dc2626;">项目寿命短，组员极易拿低绩效或被迫转岗</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">长尾商业化定制交付 / 广告运营支持组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：KPI 考核极其激进，面对广告主紧急需求频繁加班改方案。<strong style="color: #dc2626;">内部协作拉扯重，离职率高，被称为“小字节”加班区</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">边缘出海小应用试错组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：面临复杂的海外合规与留存瓶颈，资源支持受限，业务路线高频颠覆。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchXhDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('xh-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与快节奏试错文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (10105 强节奏)</h3>
+              <p>
+                普遍下班时间在 <strong style="color: #2563eb;">21:30 - 22:00</strong>。日常强度不亚于字节，但三餐全包与福利补贴保障到位。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>小团队扁平与极速试错</h3>
+              <p>
+                组织管理走向扁平化。鼓励小团队快速上线、数据验证、不行立刻 Pivot 调整方向。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>绩效与活化石文化</h3>
+              <p>
+                采用半年度绩效评估。由于公司业务快跑与高强度，内部常调侃“工龄满两年即是活化石”。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>小红书技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>算法手撕看重逻辑严密</h3>
+              <p>
+                必考 LeetCode 中等/困难题（重点：<strong style="color: #2563eb;">图论、DP、双指针、滑动窗口</strong>），要求写出无编译报错的优雅代码。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Feed 流与高并发系统架构</h3>
+              <p>
+                极其看重 <strong style="color: #059669;">Feed 流读扩散/写扩散、亿级图文向量检索、Redis HotKey 治理与大并发下缓存一致性</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Go / Java 语言与敏捷工程</h3>
+              <p>
+                主技术栈为 Go 与 Java。<strong style="color: #2563eb;">关注极致的响应延迟 (P99)、高可用与高频 A/B Test 系统设计</strong>。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要小红书资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备小红书各部门的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

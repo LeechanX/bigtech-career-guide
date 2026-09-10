@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 腾讯求职情报｜职级薪资、WXG/IEG/TEG/PCG 部门红黑榜 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 腾讯最新求职情报：9级/10级/11级 职级薪资对标、易居计划房补与年终奖分布。动态交互对比 WXG/IEG核心/TEG 等推荐 BG，避坑 PCG 与 CSIG 定制化交付组，提供 C++/Go 与 Linux 网络底层面试 SOP。"
+  >
+
+  <meta name="keywords" content="腾讯薪资, 腾讯职级对标, 腾讯9级薪资, 腾讯WXG, 腾讯PCG避坑, 腾讯TEG, 腾讯面试偏好, 腾讯易居计划">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/tencent/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="site-name" href="/">BigTechCareer</a>
+
+    <nav>
+      <details>
+        <summary>大厂情报</summary>
+        <div>
+          <a href="/companies/">国内外大厂总览</a>
+          <a href="/companies/bytedance/">字节跳动（推荐部门/风气/对标）</a>
+          <a href="/companies/tencent/">腾讯</a>
+          <a href="/companies/alibaba/">阿里巴巴</a>
+          <a href="/companies/xiaohongshu/">小红书</a>
+          <a href="/companies/google/">Google</a>
+          <a href="/companies/meta/">Meta</a>
+          <a href="/companies/amazon/">Amazon</a>
+          <a href="/companies/microsoft/">Microsoft</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>岗位题库</summary>
+        <div>
+          <a href="/interview/backend/">后端工程师（System Design / 高并发八股）</a>
+          <a href="/interview/client/">客户端工程师（iOS / Android / 性能优化）</a>
+          <a href="/interview/frontend/">前端工程师（渲染 / 异步设计）</a>
+          <a href="/interview/ai/">AI / Agent 工程师（RAG / LLM / 转岗路线）</a>
+          <a href="/interview/algorithm-project/">算法与项目深挖（LeetCode 频次 / 模板）</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>求职 SOP</summary>
+        <div>
+          <a href="/guides/international-student-job-timeline/">留学生求职 Timeline</a>
+          <a href="/guides/international-student-bigtech-job/">留学生进大厂完整指南</a>
+          <a href="/guides/return-to-china-job/">留学生回国求职 SOP</a>
+          <a href="/guides/international-student-internship/">大厂实习投递指南</a>
+        </div>
+      </details>
+
+      <details>
+        <summary>1v1 辅导</summary>
+        <div>
+          <a href="/services/resume-refinement/">简历精修</a>
+          <a href="/services/mock-interview/">1v1 模拟面试（架构 / 项目深挖）</a>
+          <a href="/services/career-positioning/">投递策略与公司定位</a>
+          <a href="/services/offer-negotiation/">Offer 选择与薪资谈判</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>腾讯（Tencent）求职情报百科</h1>
+          <p>
+            透视腾讯内部事业群（BG）风气与考核规则。提供<strong style="color: #2563eb;">职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">BG 红黑榜动态矩阵</strong>，
+            帮你算清年终奖与易居房补，锁定 WXG / IEG 核心组，<strong style="color: #dc2626;">避开收缩重灾区</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：职级薪资模拟器 -->
+      <section class="section">
+        <div class="container">
+          <h2>1. 腾讯职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同职级（对应新职级体系），查看 Package 构成、期权归属与房补福利：</p>
+
+          <style>
+            .tx-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="tx-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchTxLevel('9')">9级 (原 3-1 / 校招主力)</button>
+              <button class="level-btn" onclick="switchTxLevel('10')">10级 (原 3-2 / 社招骨干)</button>
+              <button class="level-btn" onclick="switchTxLevel('11')">11级 (原 3-3 / TL 架构)</button>
+            </div>
+
+            <!-- 9级 面板 -->
+            <div id="tx-panel-9" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">35W - 50W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票/期权占比</div>
+                  <div class="data-value">较少（仅特批或 SSP 授予）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">易居计划房补补贴</div>
+                  <div class="data-value" style="color: #2563eb;">1,250 - 1,500 元 / 月（前三年）</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10级 面板 -->
+            <div id="tx-panel-10" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">60W - 95W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票占比</div>
+                  <div class="data-value">约 20% - 30%（4年解禁）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">安居计划首套房无息贷</div>
+                  <div class="data-value" style="color: #2563eb;">最高 90W 额度</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 11级 面板 -->
+            <div id="tx-panel-11" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">100W - 170W+ / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票占比</div>
+                  <div class="data-value">35%+（通道答辩卡槽关口）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">团队管理与责任</div>
+                  <div class="data-value" style="color: #2563eb;">组长 / 模块 Tech Lead</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchTxLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('tx-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：部门红黑榜对比矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. 腾讯 BG 事业群红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看“推荐入坑”与“高危避坑”事业群的技术栈与风气内幕：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchTxDept('recommend')">🟢 推荐投递 BG（核心/高年终/稳定）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchTxDept('avoid')">🔴 高危避坑 BG（收缩/乙方化/赛马败组）</button>
+          </div>
+
+          <div class="dept-box">
+            <!-- 推荐部门面板 -->
+            <div id="tx-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">WXG (微信事业群)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：腾讯皇冠上的明珠，产品壁垒极深，现金流极其充沛。<strong style="color: #059669;">年终奖极其丰厚（动辄 10+ 个月）</strong>，技术风气严谨纯粹，极难进入但性价比最高。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">IEG 核心工作室 (天美 TiMi / 光子 LightSpeed)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：腾讯绝对造血现金牛，游戏海外出口与长线运营实力强大。<strong style="color: #059669;">年终奖包极其可观</strong>，在大容量高并发、C++ 与游戏引擎方面技术积累深厚。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">TEG (技术工程事业群)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：腾讯的技术基建大脑（混元大模型、云计算底层、分布式存储）。<strong style="color: #059669;">不背前台业务线的业绩指标 PUA</strong>，技术风气纯粹，极其适合技术极客。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 避坑部门面板 -->
+            <div id="tx-dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">PCG (平台与内容事业群)</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：包含传统信息流、腾讯视频、微视余脉与 QQ 看点等业务。受外部短视频冲击严重，<strong style="color: #dc2626;">面临持续的业务收缩、架构重组与高频裁员</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">CSIG 边缘政企 / 私有云定制化交付组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：属于“乙方心态”的定制化项目。需要频繁出差驻场，<strong style="color: #dc2626;">技术复用率低且利润率薄，容易沦为降本增效的裁员首选</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">IEG 边缘非核心 / 腰部小游戏组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：腾讯内部“赛马”机制下被边缘化的团队。游戏上线后留存数据低即面临项目快速砍线、整组撤裁。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchTxDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('tx-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与通道答辩晋升文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (相对温和)</h3>
+              <p>
+                普遍下班时间在 <strong style="color: #2563eb;">20:30 - 21:00</strong>。相比字节和拼多多，整体 WLB 较好（WXG 与 IEG 核心版本上线期除外）。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>瑞雪文化与 1.3/1.5/2.0 绩效</h3>
+              <p>
+                鼓励“瑞雪”职场正气。一年两次绩效考核（1.25、1.3、1.4、1.5 等），绩效直接绑定年终奖月份数。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>专业通道答辩</h3>
+              <p>
+                职级晋升需通过“专业通道委员会”答辩。<strong style="color: #2563eb;">10 级升 11 级（原 3-2 升 3-3）存在明显卡槽门槛</strong>，非常看重系统架构设计能力。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>腾讯技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>极度看重 C++ / Go 与底层机制</h3>
+              <p>
+                必考语言底层细节：<strong style="color: #2563eb;">C++ 虚函数表、指针内存管理、STL 源码、Go Goroutine 调度（GPM）与 GC 垃圾回收原理</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Linux 内核与网络编程</h3>
+              <p>
+                极度关注 <strong style="color: #059669;">TCP/IP 三次握手/四次挥手状态机（TIME_WAIT）、epoll IO 多路复用与网络抓包防守</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>算法看重代码规范与边界</h3>
+              <p>
+                算法题难度不如字节 Hard，但极其注重 <strong style="color: #2563eb;">代码可读性、边界条件处理与无内存溢出风险</strong>。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要腾讯资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备腾讯各 BG 的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>
