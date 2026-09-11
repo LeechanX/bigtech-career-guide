@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 月之暗面求职指南｜Kimi、薪资待遇与长文本/Agent 核心 Track - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 月之暗面 (Moonshot AI) 最新求职情报：80W-150W+ 高 Base 薪资 Package、Kimi 智能助手团队算力底座。动态交互拆解无损长上下文模型、Kimi Agent 系统与 AI Infra 三大核心 Track，提供顶会学术与产品兼备的求职 SOP。"
+  >
+
+  <meta name="keywords" content="月之暗面薪资, Moonshot AI招聘, Kimi面试, 200万字长文本, Kimi Agent, 杨植麟, LLM研究员">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/moonshot/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>月之暗面（Moonshot AI）求职情报百科</h1>
+          <p>
+            透视 Kimi 现象级产品背后的长文本技术与学术基因。提供<strong style="color: #7c3aed;">薪资与算力 Dashboard</strong>与<strong style="color: #2563eb;">三大核心技术 Track 矩阵</strong>，
+            帮你搞清 80W-150W+ 高 Base 现金与期权包，<strong style="color: #059669;">直击无损长上下文与 Kimi Agent 核心考核</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：薪资与算力资源 Simulator -->
+      <section class="section">
+        <div class="container">
+          <h2>1. 月之暗面 薪资与算力 Dashboard</h2>
+          <p class="section-intro">点击不同核心岗位，查看现金 Package 范围与核心福利：</p>
+
+          <style>
+            .ms-dashboard { border: 1px solid #e9d5ff; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .ms-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .ms-tab-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .ms-tab-btn.active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); }
+
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #fdf4ff; padding: 14px; border-radius: 8px; border-left: 4px solid #7c3aed; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .ms-panel { display: none; }
+            .ms-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="ms-dashboard">
+            <div class="ms-tabs">
+              <button class="ms-tab-btn active" onclick="switchMsLevel('researcher')">🧠 算法研究员 (Long-Context / Model)</button>
+              <button class="ms-tab-btn" onclick="switchMsLevel('agent')">🤖 Kimi Agent / 智能体工程</button>
+              <button class="ms-tab-btn" onclick="switchMsLevel('infra')">⚡ AI System & 算力工程 (Infra)</button>
+            </div>
+
+            <!-- 研究员 面板 -->
+            <div id="ms-panel-researcher" class="ms-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">80W - 150W+ RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">期权/股权激励</div>
+                  <div class="data-value">高额早期 Equity 激励</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">算力环境</div>
+                  <div class="data-value" style="color: #7c3aed;">万卡级 GPU 集群自由调度</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agent 面板 -->
+            <div id="ms-panel-agent" class="ms-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">60W - 110W RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心方向</div>
+                  <div class="data-value">Kimi 深度搜索与 Tool-Calling</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">团队氛围</div>
+                  <div class="data-value" style="color: #2563eb;">清华/CMU 极客氛围，扁平管理</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- System 面板 -->
+            <div id="ms-panel-infra" class="ms-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">70W - 120W RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心方向</div>
+                  <div class="data-value">超长 Context 显存压缩与低延迟推理</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">实习日薪</div>
+                  <div class="data-value" style="color: #7c3aed;">500 - 1000 元 / 天 (提供房补)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchMsLevel(lvl) {
+              document.querySelectorAll('.ms-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.ms-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('ms-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：三大技术 Track 拆解矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. 月之暗面 三大核心技术 Track 矩阵</h2>
+          <p class="section-intro">切换查看月之暗面内部三大主导工程线的技术细节：</p>
+
+          <style>
+            .track-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .track-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .track-btn.purple-tab.active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); }
+
+            .track-box { border: 1px solid #e9d5ff; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .track-panel { display: none; }
+            .track-panel.active { display: block; }
+
+            .track-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .track-card { padding: 18px; border-radius: 8px; border: 1px solid #e9d5ff; background: #faf5ff; }
+
+            .track-name { font-size: 17px; font-weight: 700; color: #6b21a8; margin-bottom: 8px; }
+            .track-desc { font-size: 14px; color: #334155; line-height: 1.7; }
+            .pill-tag { display: inline-block; background: #ffffff; color: #6b21a8; border: 1px solid #d8b4fe; padding: 4px 10px; border-radius: 16px; font-size: 12px; margin: 3px; font-weight: 600; }
+          </style>
+
+          <div class="track-tabs">
+            <button class="track-btn purple-tab active" onclick="switchTrack('long')">🧠 无损长上下文与模型算法</button>
+            <button class="track-btn purple-tab" onclick="switchTrack('agent')">🤖 Kimi Agent 与智能体架构</button>
+            <button class="track-btn purple-tab" onclick="switchTrack('infra')">⚡ AI System & 长文本推理 Infra</button>
+          </div>
+
+          <div class="track-box">
+            <!-- 长文本算法 Track -->
+            <div id="track-panel-long" class="track-panel active">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">无损长上下文与预训练算法 (LLM 研究员)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：保持信息无损的前提下扩展 Context Length 至百万/千万级，提升模型大海捞针与推理能力。
+                    </p>
+                    <div>
+                      <span class="pill-tag">无损长文本注意力机制</span>
+                      <span class="pill-tag">Needle In A Haystack 大海捞针</span>
+                      <span class="pill-tag">Long-Context RLHF / DPO</span>
+                      <span class="pill-tag">图文长上下文理解</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kimi Agent Track -->
+            <div id="track-panel-agent" class="track-panel">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">Kimi 探索版与 Agent 状态机 (智能体研发)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：打造自主规划、多步搜索思考与工具调用的深度 Agent 系统（Kimi 探索版/深度搜索）。
+                    </p>
+                    <div>
+                      <span class="pill-tag">多步自主规划 (Self-Correction)</span>
+                      <span class="pill-tag">Tool-Calling 状态机</span>
+                      <span class="pill-tag">实时 Web Search 索引与重排</span>
+                      <span class="pill-tag">结构化输出 Parsing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Infra Track -->
+            <div id="track-panel-infra" class="track-panel">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">AI System & 长文本推理性能 (系统工程)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：破解 200 万字超长 Context 导致的显存爆炸与首字延迟 (TTFT) 瓶颈。
+                    </p>
+                    <div>
+                      <span class="pill-tag">KV Cache 显存量化压缩</span>
+                      <span class="pill-tag">PagedAttention 极致优化</span>
+                      <span class="pill-tag">上下文 Prefix Caching</span>
+                      <span class="pill-tag">多卡分布式张量并行</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchTrack(trackId) {
+              document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('track-panel-' + trackId).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 板块 3：学术 + 产品双轮文化 -->
+      <section class="section">
+        <div class="container">
+          <h2>月之暗面“学术顶会 + 爆款产品”文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>清华 / CMU 前沿学术底色</h3>
+              <p>
+                创始人杨植麟及团队具备极高的学术声誉（NeurIPS/ICML/ACL 论文高被引），<strong style="color: #7c3aed;">技术视野与学术创新力强</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>极简的产品感与 C 端爆发</h3>
+              <p>
+                拒绝陷入纯粹研究闭门造车，用 Kimi 证明了技术可以直接转化为 C 端用户口碑与高留存。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>扁平极客组织</h3>
+              <p>
+                无层层汇报，组员直接围绕长文本与 Agent 关键 Issue 作战，不讲大厂套话。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块 4：面试偏好与防守 SOP -->
+      <section class="section">
+        <div class="container">
+          <h2>月之暗面 硬核面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>长文本 Transformer 变体手推</h3>
+              <p>
+                必考：<strong style="color: #7c3aed;">手写 Self-Attention 复杂度、长文本位置编码 (RoPE/ALiBi) 扩展原理与 KV Cache 计算</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>看重顶会论文复现与 Project 细节</h3>
+              <p>
+                极其看重 <strong style="color: #059669;">NeurIPS / ACL / EMNLP 论文第一作者或对经典模型源码的 Deep Dive 能力</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Agent 规划与工程防守</h3>
+              <p>
+                追问重点：<strong style="color: #2563eb;">多轮对话幻觉怎么防守？Tool-Calling 失败如何优雅降级？长文本首字延迟 (TTFT) 降到毫秒级？</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要月之暗面资深考官进行模考或简历排查？</h2>
+          <p>
+            如果你正在准备月之暗面 (Moonshot AI) 的算法研究或工程面试，希望评估长文本/Agent 论文防守力，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 MiniMax 求职指南｜海螺AI/星野、薪资待遇与全模态/Infra 核心 Track - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 MiniMax 最新求职情报：80W-160W+ 高 Base 薪资 Package、万卡规模分布式训练与低延迟在线推理系统。动态交互拆解全模态算法、AIGC 产品工程 (海螺/星野) 与 AI System 三大核心 Track，提供高强度 Run 模式下的硬核求职 SOP。"
+  >
+
+  <meta name="keywords" content="MiniMax薪资, MiniMax招聘, 海螺AI面试, 星野Talkie, 多模态大模型, 阎俊杰, 万卡集群, 音视频AIGC">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/minimax/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>MiniMax 求职情报百科</h1>
+          <p>
+            透视全模态大模型与海螺 AI / 星野出海背后的硬核工程。提供<strong style="color: #7c3aed;">薪资与算力 Dashboard</strong>与<strong style="color: #2563eb;">三大核心技术 Track 矩阵</strong>，
+            帮你搞算高 Package 与全模态技术，<strong style="color: #059669;">直击万卡分布式系统与音视频 AIGC 核心考核</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：薪资与算力资源 Simulator -->
+      <section class="section">
+        <div class="container">
+          <h2>1. MiniMax 薪资与算力 Dashboard</h2>
+          <p class="section-intro">点击不同核心岗位，查看现金 Package 范围与算力集群：</p>
+
+          <style>
+            .mm-dashboard { border: 1px solid #e9d5ff; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .mm-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .mm-tab-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .mm-tab-btn.active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); }
+
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #fdf4ff; padding: 14px; border-radius: 8px; border-left: 4px solid #7c3aed; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .mm-panel { display: none; }
+            .mm-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="mm-dashboard">
+            <div class="mm-tabs">
+              <button class="mm-tab-btn active" onclick="switchMmLevel('researcher')">🧠 全模态算法研究员 (Abab/视频/语音)</button>
+              <button class="mm-tab-btn" onclick="switchMmLevel('system')">⚡ 机器学习系统 & 万卡 Infra</button>
+              <button class="mm-tab-btn" onclick="switchMmLevel('product')">📱 AIGC 应用工程 (海螺AI / Talkie)</button>
+            </div>
+
+            <!-- 研究员 面板 -->
+            <div id="mm-panel-researcher" class="mm-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">80W - 160W+ RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">算力设施</div>
+                  <div class="data-value">万卡规模 GPU 多集群支持</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心方向</div>
+                  <div class="data-value" style="color: #7c3aed;">文本/语音/视频全模态端到端</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 系统/Infra 面板 -->
+            <div id="mm-panel-system" class="mm-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">70W - 130W RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心方向</div>
+                  <div class="data-value">万卡训练稳定性 & 低延迟推理</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">研发文化</div>
+                  <div class="data-value" style="color: #2563eb;">强工程落地，解决真正系统瓶颈</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 应用工程 面板 -->
+            <div id="mm-panel-product" class="mm-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">55W - 100W RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">产品出海</div>
+                  <div class="data-value">Talkie 海外爆款应用</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">实习待遇</div>
+                  <div class="data-value" style="color: #7c3aed;">400 - 800 元 / 天 (表现好可转正)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchMmLevel(lvl) {
+              document.querySelectorAll('.mm-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.mm-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('mm-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：三大技术 Track 拆解矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. MiniMax 三大核心技术 Track 矩阵</h2>
+          <p class="section-intro">切换查看 MiniMax 内部三大主导工程线的技术细节：</p>
+
+          <style>
+            .track-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .track-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .track-btn.purple-tab.active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); }
+
+            .track-box { border: 1px solid #e9d5ff; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .track-panel { display: none; }
+            .track-panel.active { display: block; }
+
+            .track-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .track-card { padding: 18px; border-radius: 8px; border: 1px solid #e9d5ff; background: #faf5ff; }
+
+            .track-name { font-size: 17px; font-weight: 700; color: #6b21a8; margin-bottom: 8px; }
+            .track-desc { font-size: 14px; color: #334155; line-height: 1.7; }
+            .pill-tag { display: inline-block; background: #ffffff; color: #6b21a8; border: 1px solid #d8b4fe; padding: 4px 10px; border-radius: 16px; font-size: 12px; margin: 3px; font-weight: 600; }
+          </style>
+
+          <div class="track-tabs">
+            <button class="track-btn purple-tab active" onclick="switchTrack('multi')">🧠 全模态算法 (文本/语音/视频生成)</button>
+            <button class="track-btn purple-tab" onclick="switchTrack('infra')">⚡ 机器学习系统 & 万卡 Infra</button>
+            <button class="track-btn purple-tab" onclick="switchTrack('app')">📱 AIGC 爆款应用工程 (海螺/星野)</button>
+          </div>
+
+          <div class="track-box">
+            <!-- 全模态算法 Track -->
+            <div id="track-panel-multi" class="track-panel active">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">全模态大模型算法 (Abab / 海螺视频生成)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：推动文本、超逼真语音 (Speech Synthesis) 与高质量视频 (Text-to-Video) 原生融合的生成算法进化。
+                    </p>
+                    <div>
+                      <span class="pill-tag">原生多模态 Transformer</span>
+                      <span class="pill-tag">DiT (Diffusion Transformer) 视频生成</span>
+                      <span class="pill-tag">高自然度流式语音 (Text-to-Audio)</span>
+                      <span class="pill-tag">音乐生成 & 情感表达</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Infra Track -->
+            <div id="track-panel-infra" class="track-panel">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">万卡 Scale 机器学习系统与在线推理 (Infra)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：在万卡多集群复杂环境下，实现极低延迟、高吞吐的流式语音与视频在线推理。
+                    </p>
+                    <div>
+                      <span class="pill-tag">万卡规模分布式训练容错</span>
+                      <span class="pill-tag">视频/语音流式推理加速</span>
+                      <span class="pill-tag">多集群算力调度</span>
+                      <span class="pill-tag">GPU 显存与通信压榨</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- App Track -->
+            <div id="track-panel-app" class="track-panel">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">AIGC 爆款产品与出海架构 (海螺 AI / Talkie)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：打磨海螺 AI（视频创作）与 Talkie（星野海外版），探索 AIGC 时代全新交互范式。
+                    </p>
+                    <div>
+                      <span class="pill-tag">海螺 AI 视频渲染链路</span>
+                      <span class="pill-tag">Talkie 海外高并发架构</span>
+                      <span class="pill-tag">实时语音交互 SSE / WebSocket</span>
+                      <span class="pill-tag">客户端/服务端性能优化</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchTrack(trackId) {
+              document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('track-panel-' + trackId).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 板块 3：全模态 + 高速 Run 文化 -->
+      <section class="section">
+        <div class="container">
+          <h2>MiniMax “全模态 + 商业落地” Run 文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>全模态自研决心</h3>
+              <p>
+                不局限于纯文本，在文本、语音、视频与音乐全赛道并行推进，<strong style="color: #7c3aed;">具备极强的技术全面性</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>商业与 C 端爆发力</h3>
+              <p>
+                凭借 Talkie (星野) 在海外成功跑通用户高留存，海螺 AI 在视频生成领域迅速拉满口碑，产品落地极其迅猛。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>高强度 Run 与极客落地</h3>
+              <p>
+                节奏紧凑高效，追求用代码和产品直接拿结果，拒绝浮夸的概念宣发。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块 4：面试偏好与防守 SOP -->
+      <section class="section">
+        <div class="container">
+          <h2>MiniMax 硬核面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>多模态 DiT / 语音生成手撕</h3>
+              <p>
+                必考：<strong style="color: #7c3aed;">Diffusion Transformer 架构、Cross-Attention 计算、语音 Tokenizer 与声码器机制</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>万卡 Infra 与低延迟在线推理</h3>
+              <p>
+                重点追问：<strong style="color: #059669;">多卡 NCCL 通信瓶颈、实时语音低于 200ms 响应优化、分布式训练 Loss 波动修复</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>工程基础与项目品味</h3>
+              <p>
+                针对应用工程岗：<strong style="color: #2563eb;">ACM 级代码能力、Golang/Python/C++ 内存管理与高并发 Web 组件深度理解</strong>。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要 MiniMax 资深考官进行模考或简历排查？</h2>
+          <p>
+            如果你正在准备 MiniMax 的全模态算法、Infra 或海螺/Talkie 应用研发面试，希望评估竞争力，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

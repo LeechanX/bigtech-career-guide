@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <a href="/companies/tencent/">腾讯</a>
             <a href="/companies/alibaba/">阿里巴巴</a>
             <a href="/companies/deepseek/">DeepSeek</a>
-            <a href="/companies/kimi/">月之暗面</a>
+            <a href="/companies/kimi/">kimi月之暗面</a>
             <a href="/companies/minimax/">MiniMax</a>
             <a href="/companies/xiaohongshu/">小红书</a>
             <a href="/companies/pinduoduo/">拼多多</a>
