@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3年AI工程做RAG总被嫌太浅，如何靠重构检索链路与评测体系拿下大厂P7 Offer - BigTechCareer</title>
+  <meta name="description" content="解析3年经验AI工程师如何从简单的向量检索套壳，重构为混合检索与上下文压缩流水线，并通过搭建LLM-as-a-Judge评测体系，成功斩获95万年薪大厂Offer。">
+  
+  <meta name="keywords" content="简历重构, 面评逆向, 职级跨越">
+  <meta name="client-profile" content="3年 Python/Go 经验，做过基础RAG，面试卡在检索准确率与高延迟">
+  <meta name="result-offer" content="成功拿到某头部大厂 Agent 平台高级工程师 Offer（95万年薪）">
+
+  <link rel="canonical" href="https://bigtechcareer.com/interview/ai/items/case-02-rag-optimization.html">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+    <div class="page-main">
+
+      <section class="hero" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 40px 0;">
+        <div class="container">
+          <div style="font-size: 14px; color: #38bdf8; font-weight: 700; margin-bottom: 8px;">CASE STUDY · 1V1 辅导复盘</div>
+          <h1 style="color: #ffffff; font-size: 26px; line-height: 1.4; margin-bottom: 16px;">
+            3年AI工程做RAG被嫌太浅，靠重构链路拿下大厂P7 Offer
+          </h1>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">简历重构</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">面评逆向</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">职级跨越</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          
+          <style>
+            .summary-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 20px; margin-bottom: 32px; }
+            .info-box { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; padding: 18px; margin: 20px 0; }
+            .resource-box { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 14px; color: #92400e; }
+            .step-title { font-size: 18px; font-weight: 700; color: #0f172a; margin-top: 24px; margin-bottom: 12px; display: flex; align- items: center; gap: 8px; }
+            .highlight-text { background: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #854d0e; }
+          </style>
+
+          <div class="summary-box">
+            <div style="font-weight: 700; color: #166534; font-size: 16px; margin-bottom: 8px;">🏆 诊断战报摘要</div>
+            <div style="font-size: 15px; color: #15803d; line-height: 1.6;">
+              <strong>同学画像：</strong>3 年 Python/Go 经验，此前在一家中型公司做内部文档知识库。做过简单的 RAG 检索，但面试经常被卡在“检索不准”、“延迟过高”和“回答幻觉严重”。<br>
+              <strong>最终战果：</strong>重新梳理 RAG 工程壁垒与测试集，拿到某头部大厂 Agent 平台高级工程师 Offer（<span class="highlight-text">Base + 期权折合 95 万年薪</span>）。
+            </div>
+          </div>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px;">
+            👤 1. 同学背景介绍
+          </h2>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            同学工作 3 年，主要用 Python 和 Go 做业务逻辑。过去一年在公司内部主导过一个知识库项目，本质就是把文档切块存进 Milvus，用户提问时调大模型回答。他想借着 AI 热潮跳槽到大厂核心团队，但一直拿不到满意的职级和薪资。
+          </p>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🎯 2. 辅导需求
+          </h2>
+          <ul style="font-size: 15px; color: #334155; line-height: 1.8; padding-left: 20px;">
+            <li>冲刺大厂 P7 / L5 级别的 Agent 与 AI 平台岗位。</li>
+            <li>面试总是被评为“技术深度不够”、“只会调用简单向量数据库”，希望能在短时间内补齐硬核的 AI 工程项目亮点。</li>
+          </ul>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🔍 3. 诊断与问题拆解
+          </h2>
+          <div class="info-box">
+            <p style="margin: 0 0 10px 0; font-size: 15px; color: #1e293b; font-weight: 700;">经过沟通与简历诊断，发现他主要存在以下问题：</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.7;">
+              <li><strong style="color: #dc2626;">检索策略太粗暴：</strong>只做简单的向量相似度匹配，遇到长文档或者跨段落上下文时，检索出来的结果噪声极大，模型回答幻觉严重。</li>
+              <li><strong style="color: #dc2626;">成本与延迟失控：</strong>把检索到的几万 Token 全部一股脑塞给大模型，导致响应延迟高达 4-5 秒，Token 消耗极高，根本没做过上下文压缩。</li>
+              <li><strong style="color: #dc2626;">没有科学打分标准：</strong>面试官问怎么评估优化效果，他只能回答“感觉效果变好了”，拿不出一套客观的自动化测试数据。</li>
+            </ol>
+          </div>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🛠️ 4. 优化思路与实操
+          </h2>
+
+          <div class="step-title">第一步：重构检索流水线，引入混合检索与二次重排</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>单依靠向量检索很容易漏掉关键词精准匹配。指导他改用 BM25 关键词检索加向量检索的混合召回模式，并在后置链路引入交叉编码器重排模型（Reranker）。同时，改掉死板的固定长度切块，采用父子文档切分策略（Parent-Document Retrieval），保证小块用于精准检索，大块用于补充上下文。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            提供了一套工业级<strong>《高性能 RAG 混合检索与重排工程落地源码》</strong>与配置模版，教他如何基于 ES/Elasticsearch + Milvus 快速搭建双通道召回架构。
+          </div>
+
+          <div class="step-title">第二步：搭建上下文压缩与 Prompt 缓存机制</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>针对长文本响应慢、成本高的问题，指导他引入文本摘要提取与上下文压缩算法，把冗余的无关信息剔除后再提交给大模型。同时引入提示词缓存（Prompt Caching）与流式响应拼接，大幅降低首包延迟。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            发给他一份<strong>《大模型首包延迟与 Token 成本控制指导手册》</strong>，手把手教他做首Token与首包响应时间优化。
+          </div>
+
+          <div class="step-title">第三步：建立自动化评测体系与面试防守</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>指导他利用大模型做裁判（LLM-as-a-Judge）的方法，构建包含召回率、忠实度和相关度三个维度的测试集。在简历上直接用数据说话：<strong style="color: #059669;">检索准确率提升 35%，首包延迟降低至 600 毫秒以内，Token 消耗减少 40%</strong>。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            提供了一套<strong>大厂常用的 RAG 评估指标测试脚本</strong>，并安排了 1v1 模拟面试，针对大厂高频询问的“检索噪声对抗”与“多模态扩展”做话术演练。
+          </div>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 36px; margin-bottom: 16px;">
+            💡 5. 导师启示
+          </h2>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; font-size: 15px; color: #1e40af; line-height: 1.7;">
+            RAG 绝不是简单调个接口把文本存进数据库。大厂真正看重的是你在检索质量、系统延迟与调用成本三者之间做平衡的能力。用可定量的工程指标去证明你的优化效果，才能在技术面试里打出强通过信号。
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 BigTechCareer · 大厂求职与职业发展指南</div>
+</footer>
+
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

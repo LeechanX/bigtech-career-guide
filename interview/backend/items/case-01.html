@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case 01：6年传统Java后端做CRUD，重构高并发交易架构直通字节2-2 - BigTechCareer</title>
+  <meta name="description" content="记录6年传统中小型企业Java后端，如何通过重构分布式事务、热点Key扣减与平滑数据迁移方案，撕掉CRUD标签成功拿到字节跳动105万年薪Offer。">
+  
+  <meta name="keywords" content="简历重构, 面评逆向, 职级跨越">
+  <meta name="client-profile" content="6年 Java 经验，长期在中小型公司做传统电商订单业务，面试屡屡被扣上“缺乏大厂高并发经验”标签">
+  <meta name="result-offer" content="成功拿到字节跳动 2-2 核心业务组 Offer（105万年薪）">
+
+  <link rel="canonical" href="https://bigtechcareer.com/interview/backend/items/case-01-high-concurrency-transactions.html">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+    <div class="page-main">
+
+      <section class="hero" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 40px 0;">
+        <div class="container">
+          <div style="font-size: 14px; color: #38bdf8; font-weight: 700; margin-bottom: 8px;">CASE STUDY · 1V1 辅导复盘</div>
+          <h1 style="color: #ffffff; font-size: 26px; line-height: 1.4; margin-bottom: 16px;">
+            6年传统Java后端做CRUD-重构高并发交易架构拿下字节2-2
+          </h1>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">简历重构</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">面评逆向</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">职级跨越</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          
+          <style>
+            .summary-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 20px; margin-bottom: 32px; }
+            .info-box { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; padding: 18px; margin: 20px 0; }
+            .resource-box { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 14px; color: #92400e; }
+            .step-title { font-size: 18px; font-weight: 700; color: #0f172a; margin-top: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+            .highlight-text { background: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #854d0e; }
+          </style>
+
+          <div class="summary-box">
+            <div style="font-weight: 700; color: #166534; font-size: 16px; margin-bottom: 8px;">🏆 诊断战报摘要</div>
+            <div style="font-size: 15px; color: #15803d; line-height: 1.6;">
+              <strong>同学画像：</strong>6 年 Java 后端经验，长期在二线企业做内部订单和供应链系统。业务量不大，简历全是常规增删改查描述，屡次在大厂二面被判定为“缺乏大流量实战认知”。<br>
+              <strong>最终战果：</strong>深度挖掘业务潜能，重新设计百万级高并发扣减与平滑迁移架构，拿到字节跳动 2-2（<span class="highlight-text">Base + 年终折合 105 万年薪</span>）。
+            </div>
+          </div>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px;">
+            👤 1. 同学背景介绍
+          </h2>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            同学工作 6 年，一直在中小型公司做后端开发。技术栈主要是 Spring Boot、MySQL 和 Redis。虽然平时代码写得很规范，但由于所在公司业务并发量不高，简历上写满了“负责订单模块接口开发”、“使用 Redis 缓存数据”等普通描述，很难通过顶级大厂的简历筛选。
+          </p>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🎯 2. 辅导需求
+          </h2>
+          <ul style="font-size: 15px; color: #334155; line-height: 1.8; padding-left: 20px;">
+            <li>冲刺字节跳动、美团等互联网大厂的资深后端岗位。</li>
+            <li>希望把现有平淡的项目经历包装得有说服力，能够应对大厂面试官对高并发、分布式一致性等硬核技术的连环追问。</li>
+          </ul>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🔍 3. 诊断与问题拆解
+          </h2>
+          <div class="info-box">
+            <p style="margin: 0 0 10px 0; font-size: 15px; color: #1e293b; font-weight: 700;">梳理他的面试经历，主要存在以下问题：</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.7;">
+              <li><strong style="color: #dc2626;">简历没有技术亮点：</strong>项目描述就像流水账，看不出任何技术挑战与架构设计，在大厂筛选系统里评分偏低。</li>
+              <li><strong style="color: #dc2626;">分布式问题回答浮于表面：</strong>面试官追问“分布式事务中数据库与消息队列不一致怎么处理”时，只能答出简单的 try-catch，说不清本地消息表或事务消息的底层实现。</li>
+              <li><strong style="color: #dc2626;">缺乏容错意识：</strong>只考虑了正常调用的逻辑，遇到 Redis 热点 Key 倾斜、缓存击穿、数据库死锁等线上故障时，给不出针对性的降级与防护方案。</li>
+            </ol>
+          </div>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🛠️ 4. 优化思路与实操
+          </h2>
+
+          <div class="step-title">第一步：重构订单扣减链路，打造高并发亮点</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>指导他把他做过的普通订单系统，提炼重构成具备防超卖能力的高并发扣减架构。采用 Redis + Lua 脚本进行库存预扣减，结合 RocketMQ 异步落库。针对分布式事务，引入“本地消息表 + 异步补偿机制”，彻底解决跨服务数据一致性问题。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            直接提供了一套大厂生产环境落地过的<strong>《高并发库存预扣减与分布式事务防守方案源码》</strong>，教他把每一行核心逻辑理顺。
+          </div>
+
+          <div class="step-title">第二步：补充数据平滑迁移与零停机方案</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>大厂非常看重“不停机升级”的能力。指导他在项目中补充“千万级核心交易数据分库分表与平滑迁移”经历。详细设计“双写 -> 增量校验 -> 全量比对 -> 切流”的完整流程，并加上容灾回滚逻辑。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            发给他一份<strong>《零停机数据库平滑迁移实战 SOP》</strong>，让他能口述整个切流与数据校验步骤。
+          </div>
+
+          <div class="step-title">第三步：高频防守话术训练与全真模考</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>针对字节等大厂喜欢考的“热点 Key 倾斜”、“缓存与数据库一致性”、“数据库死锁排查”等问题做专项整理。教他采用“问题现象 -> 根本原因 -> 权衡折中 -> 最终产出”的四步表达法。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            拿出一份<strong>字节跳动后端架构面试高频卡扣表</strong>，进行了 2 轮全真模考，针对分布式锁与限流算法的表达做了逐句纠偏。
+          </div>
+
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 36px; margin-bottom: 16px;">
+            💡 5. 导师启示
+          </h2>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; font-size: 15px; color: #1e40af; line-height: 1.7;">
+            做 CRUD 不可怕，可怕的是用 CRUD 的思维去回答大厂面试。即使你原本的系统并发量不大，只要你按照大厂的生产标准，把容错、一致性与平滑升级的逻辑梳理得丝丝入扣，就能展现出优秀的架构潜质。
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 BigTechCareer · 大厂求职与职业发展指南</div>
+</footer>
+
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>
