@@ -5,13 +5,13 @@ const path = require('path');
 const TRACKS = [
   {
     id: 'backend',
-    title: '后端架构 1v1 辅导真实案例库',
+    title: '后端开发 backend 1v1 辅导真实案例库',
     desc: '从高并发死局、中间件灾难到架构重构，揭秘大厂后端真实面评与辅导逆转实录。',
     categories: ['简历重构', '面评逆向', '薪资博弈', '职级跨越', '赛道转型']
   },
   {
     id: 'frontend',
-    title: '前端工程 1v1 辅导真实案例库',
+    title: '前端开发 1v1 辅导真实案例库',
     desc: '从渲染性能瓶颈到前端基建重构，揭秘字节、美团前端核心岗真实面评与诊断实录。',
     categories: ['简历重构', '面评逆向', '薪资博弈', '职级跨越', '赛道转型']
   },
@@ -93,7 +93,7 @@ function buildTrack(track) {
 
       <section class="hero" style="background: linear-gradient(135deg, #0f172a, #1e1b4b); color: #fff; padding: 48px 0;">
         <div class="container">
-          <h1 style="color: #fff; margin-bottom: 12px; font-size: 32px;">${track.title.split(' 1v1')[0]} (Case Studies)</h1>
+          <h1 style="color: #fff; margin-bottom: 12px; font-size: 32px;">${track.title.split(' 1v1')[0]}</h1>
           <p style="color: #cbd5e1; font-size: 16px; line-height: 1.6; margin: 0;">
             放弃八股文死记硬背。用咨询公司的上帝视角，深度拆解 <strong>真实例子</strong><br>
             是如何跨越系统设计考核黑盒，实现 <span style="color: #facc15; font-weight: bold;">Offer 薪资与职级越级</span> 的。
