@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 美团求职情报｜职级薪资、核心本地商业/美团优选红黑榜 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 美团最新求职情报：L7/L8/L9 职级薪资对标、开水团工程文化与履约调度算法。动态交互对比 核心本地商业/基础研发 等推荐部门，避坑 美团优选高压组，提供算法与 Java 高并发面试 SOP。"
+  >
+
+  <meta name="keywords" content="美团薪资, 美团L8, 美团到家, 美团闪购, 美团优选避坑, 美团履约调度, 美团面试">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/meituan/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>美团（Meituan）求职情报百科</h1>
+          <p>
+            透视美团极致务实与工程落地的文化。提供<strong style="color: #2563eb;">L7/L8/L9 职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">部门红黑榜动态矩阵</strong>，
+            帮你搞懂 Package 构成，锁定核心本地商业与美团平台，<strong style="color: #dc2626;">避开亏损重灾组</strong>。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>1. 美团职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同职级（统一为 L 系列新职级），查看 Base 与年终奖构成：</p>
+
+          <style>
+            .mt-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="mt-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchMtLevel('l7')">L7 (初级 / 校招主力 / 原3-1)</button>
+              <button class="level-btn" onclick="switchMtLevel('l8')">L8 (资深 / 社招骨干 / 原3-2)</button>
+              <button class="level-btn" onclick="switchMtLevel('l9')">L9 (TL / 架构专家 / 原3-3)</button>
+            </div>
+
+            <div id="mt-panel-l7" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">35W - 50W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">薪资结构</div>
+                  <div class="data-value">15.5 个月 (Base x 12 + 3.5个月年终)</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">文化特点</div>
+                  <div class="data-value" style="color: #2563eb;">务实工程风 / 讲求 ROI</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="mt-panel-l8" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">60W - 95W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票占比</div>
+                  <div class="data-value">约 15% - 25%（4年归属）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">晋升窗口</div>
+                  <div class="data-value" style="color: #2563eb;">一年两次通道晋升评估</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="mt-panel-l9" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">100W - 170W+ / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票占比</div>
+                  <div class="data-value">30%+（带团队/背业务战果）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心职责</div>
+                  <div class="data-value" style="color: #2563eb;">负责高并发履约系统与算法调优</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchMtLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('mt-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>2. 美团部门红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看推荐投递与高危避坑业务组：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchMtDept('recommend')">🟢 推荐投递 BU（核心造血/搜推算法/大技术平台）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchMtDept('avoid')">🔴 高危避坑 BU（亏损重灾/高频改组/边缘项目）</button>
+          </div>
+
+          <div class="dept-box">
+            <div id="mt-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">核心本地商业 (外卖 / 到店 / 闪购)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：美团绝对的“造血现金牛”。拥有实时骑手调度、超高并发秒杀与百亿级交易场景，<strong style="color: #059669;">奖金池丰厚，技术锻炼极其扎实</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">美团平台 (搜索与推荐算法 / 美团 App)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：统一流量入口与推荐引擎。<strong style="color: #059669;">算法与工程资源倾斜大，技术迭代快，晋升机会充沛</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">基础研发平台 (大技术 / 云原生 / 基础设施)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：美团底层基建。沉淀了 M3 监控、Octo RPC 与高性能存储，<strong style="color: #059669;">技术风气严谨，远离前台业务拉扯</strong>。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="mt-dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">美团优选 (社区团购亏损防守组)</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：<strong>高危重灾区！</strong> 长期处于降本增效防守状态。<strong style="color: #dc2626;">KPI 压力极大，绩效不及预期风险高，组撤改频繁</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">频繁试错的边缘出行/硬件创新组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：业务 ROI 难以闭环，容易因战略调整被整组缩减。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchMtDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('mt-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与“开水团”工程文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (1095 节奏)</h3>
+              <p>
+                普遍下班时间在 <strong style="color: #2563eb;">21:00 - 21:30</strong>。务实尚俭，追求极致工程效率。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>苦干与 ROI 结果导向</h3>
+              <p>
+                极度注重逻辑推演与数据效果（“苦干+巧干”）。任何技术改造必须说清楚业务价值。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>S / A / B / C 绩效评估</h3>
+              <p>
+                一年两次绩效。非常看重工程规范、线上零故障与 OKR 达成度。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>美团技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Java 高并发与中间件原理</h3>
+              <p>
+                必考：<strong style="color: #2563eb;">JVM 内存模型、Caffeine/Redis 多级缓存、RPC 异步调用与优雅降级</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>实时调度算法与地理位置 (LBS)</h3>
+              <p>
+                核心考点：<strong style="color: #059669;">GeoHash / H3 空间索引、运筹优化算法、实时秒杀库存防超卖</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>算法手撕严查边界</h3>
+              <p>
+                LeetCode 中等/困难题，要求 <strong style="color: #2563eb;">思路清晰、无编译 Error、边界异常捕捉完备</strong>。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要美团资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备美团各部门的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

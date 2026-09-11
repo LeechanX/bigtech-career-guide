@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 DeepSeek 深度求职指南｜薪资待遇、AI System/算法/Infra 核心 Track - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 DeepSeek (深度求索) 最新求职情报：14薪高 Base 薪资 Package (深度学习研究员/Core System/Agent)、人均万卡 GPU 算力集群。动态交互拆解算法模型、AI Infra 算力工程与 Agent 落地三大 Core Track，提供无大厂味极客文化与硬核面试 SOP。"
+  >
+
+  <meta name="keywords" content="DeepSeek薪资, DeepSeek招聘, DeepSeek面试, 深度求索待遇, MLA, DeepSeekMoE, AI System面试, CUDA算子">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/deepseek/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>DeepSeek（深度求索）求职情报百科</h1>
+          <p>
+            透视 AI 顶流新贵的极客基因与极致工程文化。提供<strong style="color: #7c3aed;">14薪顶薪薪资与算力 Dashboard</strong>与<strong style="color: #2563eb;">三大核心技术 Track 矩阵</strong>，
+            帮你搞懂 80W-150W+ 高 Base 现金流，拒绝“大厂味”PPT，<strong style="color: #059669;">直击 AI System 与模型架构硬核考核</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：薪资与算力资源 Simulator -->
+      <section class="section">
+        <div class="container">
+          <h2>1. DeepSeek 薪资与算力资源 Dashboard</h2>
+          <p class="section-intro">点击不同核心岗位，查看 14 薪现金 Package 范围与人均算力卡数分配：</p>
+
+          <style>
+            .ds-dashboard { border: 1px solid #e9d5ff; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .ds-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .ds-tab-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .ds-tab-btn.active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); }
+
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #fdf4ff; padding: 14px; border-radius: 8px; border-left: 4px solid #7c3aed; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .ds-panel { display: none; }
+            .ds-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="ds-dashboard">
+            <div class="ds-tabs">
+              <button class="ds-tab-btn active" onclick="switchDsLevel('researcher')">🧠 深度学习研究员 (AGI/算法)</button>
+              <button class="ds-tab-btn" onclick="switchDsLevel('system')">⚡ 核心系统/Infra 研发工程师</button>
+              <button class="ds-tab-btn" onclick="switchDsLevel('agent')">🤖 Agent / 全栈工程研发</button>
+            </div>
+
+            <!-- 研究员 面板 -->
+            <div id="ds-panel-researcher" class="ds-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围 (14薪)</div>
+                  <div class="data-value" style="color: #059669;">112W - 154W+ RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">月薪区间 (14薪计)</div>
+                  <div class="data-value">8W - 11W RMB / 月</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">算力卡数保障</div>
+                  <div class="data-value" style="color: #7c3aed;">人均独享数百卡 H100/H800 集群</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 系统/Infra 面板 -->
+            <div id="ds-panel-system" class="ds-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围 (14薪)</div>
+                  <div class="data-value" style="color: #059669;">84W - 126W RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">月薪区间 (14薪计)</div>
+                  <div class="data-value">6W - 9W RMB / 月</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心方向</div>
+                  <div class="data-value" style="color: #7c3aed;">CUDA 算子 / 显存优化 / 双流并行</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agent/全栈 面板 -->
+            <div id="ds-panel-agent" class="ds-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围 (14薪)</div>
+                  <div class="data-value" style="color: #059669;">56W - 98W RMB / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">月薪区间 (14薪计)</div>
+                  <div class="data-value">4W - 7W RMB / 月</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">实习生日薪待遇</div>
+                  <div class="data-value" style="color: #2563eb;">500 - 1000 元 / 天 (顶尖可面议)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchDsLevel(lvl) {
+              document.querySelectorAll('.ds-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.ds-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('ds-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：三大技术 Track 拆解矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. DeepSeek 三大核心技术 Track 矩阵</h2>
+          <p class="section-intro">切换查看 DeepSeek 内部三大主导工程线的技术细节与考察方向：</p>
+
+          <style>
+            .track-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .track-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .track-btn.purple-tab.active { background: #7c3aed; color: #ffffff; border-color: #7c3aed; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); }
+
+            .track-box { border: 1px solid #e9d5ff; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .track-panel { display: none; }
+            .track-panel.active { display: block; }
+
+            .track-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .track-card { padding: 18px; border-radius: 8px; border: 1px solid #e9d5ff; background: #faf5ff; }
+
+            .track-name { font-size: 17px; font-weight: 700; color: #6b21a8; margin-bottom: 8px; }
+            .track-desc { font-size: 14px; color: #334155; line-height: 1.7; }
+            .pill-tag { display: inline-block; background: #ffffff; color: #6b21a8; border: 1px solid #d8b4fe; padding: 4px 10px; border-radius: 16px; font-size: 12px; margin: 3px; font-weight: 600; }
+          </style>
+
+          <div class="track-tabs">
+            <button class="track-btn purple-tab active" onclick="switchTrack('model')">🧠 算法与模型研究 (Foundation Model)</button>
+            <button class="track-btn purple-tab" onclick="switchTrack('infra')">⚡ AI System & 算力基建 (Infra)</button>
+            <button class="track-btn purple-tab" onclick="switchTrack('agent')">🤖 Agent & 高吞吐应用 (Application)</button>
+          </div>
+
+          <div class="track-box">
+            <!-- 算法 Track -->
+            <div id="track-panel-model" class="track-panel active">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">大模型架构与 Post-Training (深度学习研究员)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：打破 Scaling Law 成本瓶颈，用极小算力实现超越大厂顶尖模型（如 OpenAI o1/GPT-4o）的推理与理解能力。
+                    </p>
+                    <div>
+                      <span class="pill-tag">MLA (Multi-head Latent Attention)</span>
+                      <span class="pill-tag">DeepSeekMoE 细粒度专家</span>
+                      <span class="pill-tag">GRPO (Group Relative Policy Optimization)</span>
+                      <span class="pill-tag">DPO 对齐</span>
+                      <span class="pill-tag">Reasoning / Math / Code 专项训练</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Infra Track -->
+            <div id="track-panel-infra" class="track-panel">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">AI System & 底层算力工程 (核心系统工程师)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：极限压榨 GPU/NPU 算力与通信带宽，将硬件利用率 (MFU) 推到物理极限。
+                    </p>
+                    <div>
+                      <span class="pill-tag">DualPipe 流水线并行</span>
+                      <span class="pill-tag">FP8 混合精度训练/推理</span>
+                      <span class="pill-tag">CUDA / Triton 算子重写</span>
+                      <span class="pill-tag">KV Cache 极限压缩</span>
+                      <span class="pill-tag">vLLM / SGLang 源码级修改</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agent Track -->
+            <div id="track-panel-agent" class="track-panel">
+              <div class="track-card-list">
+                <div class="track-card">
+                  <div class="track-name">Agent 状态机与高并发 API (全栈研发)</div>
+                  <div class="track-desc">
+                    <p style="margin-bottom: 10px;">
+                      <strong>核心使命</strong>：打造超低延迟、超高 TPS 的全球 API 与 AGI 智能体生态，兼顾成本与极限吞吐。
+                    </p>
+                    <div>
+                      <span class="pill-tag">SSE 流式长连接</span>
+                      <span class="pill-tag">Tool-Calling 状态机</span>
+                      <span class="pill-tag">JSON Schema 结构化输出</span>
+                      <span class="pill-tag">高并发网关路由</span>
+                      <span class="pill-tag">Prompt / Context 缓存</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchTrack(trackId) {
+              document.querySelectorAll('.track-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('track-panel-' + trackId).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 板块 3：拒绝“大厂味”与极客基因 -->
+      <section class="section">
+        <div class="container">
+          <h2>DeepSeek 独特的“无大厂味”极客文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>拒绝 PPT 与对齐拉扯</h3>
+              <p>
+                没有冗长的汇报、没有对齐周报。工程师直接用 <strong style="color: #7c3aed;">硬核代码、训练 Loss 曲线与论文结果</strong> 说话。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>顶级人均算力支持</h3>
+              <p>
+                背靠幻方量化建立的万卡 GPU 算力底座，不搞卡槽卡脖子，<strong style="color: #059669;">只要思路靠谱，算力管够</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>开源信仰与技术平权</h3>
+              <p>
+                核心模型论文与代码完全开源（DeepSeek-V2/V3/R1），极度推崇开源社区贡献者与 ACM 竞赛大神。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块 4：面试偏好与防守 SOP -->
+      <section class="section">
+        <div class="container">
+          <h2>DeepSeek 硬核面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>手撕 MLA / MoE 注意力源码</h3>
+              <p>
+                面试绝非八股。常考 <strong style="color: #7c3aed;">手写 Attention 降维推导、MoE 专家路由 Loss 计算与 CUDA Kernel 优化</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>极度看重学术与竞赛履历</h3>
+              <p>
+                非常看重 <strong style="color: #059669;">NeurIPS / ICML / ICLR 顶会论文首作、ACM-ICPC 金牌或 Kaggle Grandmaster</strong> 履历。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>AI System 追问“压榨到极致”</h3>
+              <p>
+                追问重点：<strong style="color: #2563eb;">显存 OOM 怎么排查？FP8 溢出怎么防守？vLLM 的 PagedAttention 瓶颈在哪里？</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要 DeepSeek 资深考官/AI 专家进行模考？</h2>
+          <p>
+            如果你正在准备 DeepSeek 的深度学习研究员或 AI System 研发面试，希望评估代码/论文防守力，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

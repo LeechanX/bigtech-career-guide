@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 Google 谷歌求职情报｜L3/L4/L5 职级薪资、Google Cloud/Gemini红黑榜 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 Google 谷歌最新求职情报：L3/L4/L5 职级薪资 Package 构成、WLB 氛围与算法代码规范。动态交互对比 Google Cloud/Gemini AI/Search 等推荐部门，避坑裁员风波组，提供算法手撕与分布式 System Design 面试 SOP。"
+  >
+
+  <meta name="keywords" content="Google薪资, 谷歌职级, L4薪资, Gemini AI, Google Cloud, 谷歌面试, 谷歌外企待遇">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/google/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>Google（谷歌）求职情报百科</h1>
+          <p>
+            透视 Google 全球顶级技术基建与工程师文化。提供<strong style="color: #2563eb;">L3/L4/L5 职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">部门红黑榜动态矩阵</strong>，
+            帮你搞懂 Package 与 RSU 股票，锁定 Gemini AI 与 Cloud 核心组，<strong style="color: #dc2626;">避开高风险被砍项目</strong>。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>1. Google 职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同 L 职级，查看现金 Base、RSU 股票与全球/国内 Package 对标：</p>
+
+          <style>
+            .gg-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="gg-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchGgLevel('l3')">L3 (Software Engineer / 初级)</button>
+              <button class="level-btn" onclick="switchGgLevel('l4')">L4 (SWE II / 骨干中级)</button>
+              <button class="level-btn" onclick="switchGgLevel('l5')">L5 (Senior SWE / 资深/TL)</button>
+            </div>
+
+            <div id="gg-panel-l3" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">Package (国内/全球)</div>
+                  <div class="data-value" style="color: #059669;">40W - 60W RMB / $180k+</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票</div>
+                  <div class="data-value">GSU（4年归属，流动性天花板）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">WLB 氛围</div>
+                  <div class="data-value" style="color: #2563eb;">WLB 顶峰 / 极佳办公食堂</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="gg-panel-l4" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">Package (国内/全球)</div>
+                  <div class="data-value" style="color: #059669;">75W - 120W RMB / $260k+</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">GSU 股票占比</div>
+                  <div class="data-value">约 25% - 35%</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">职业晋升</div>
+                  <div class="data-value" style="color: #2563eb;">需要证明独立复杂项目交付</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="gg-panel-l5" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">Package (国内/全球)</div>
+                  <div class="data-value" style="color: #059669;">130W - 220W+ RMB / $380k+</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">GSU 股票占比</div>
+                  <div class="data-value">40%+ 强股票杠杆</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心职责</div>
+                  <div class="data-value" style="color: #2563eb;">驱动大型 System Design 与跨组协作</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchGgLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('gg-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>2. Google 部门红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看推荐投递与高危避坑团队：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchGgDept('recommend')">🟢 推荐投递团队（Gemini AI/Cloud/Core Infrastructure）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchGgDept('avoid')">🔴 高危避坑团队（Google Graveyard 边缘试错组）</button>
+          </div>
+
+          <div class="dept-box">
+            <div id="gg-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">Google DeepMind & Gemini AI (大模型 & AI 基础设施)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：Google 全球核心战略重心！拥有顶尖 TPU 算力集群与大模型生态，<strong style="color: #059669;">预算上不封顶，技术积累天花板</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">Google Cloud (GCP 核心基础设施 / 云计算)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：Google 商业化增长大本营。涵盖 Spanner, BigQuery, Borg 云原生，<strong style="color: #059669;">HC 充沛，工程硬实力极强</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">Search & Ads (搜索与广告变现引擎)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：Google 最大的造血现金牛，稳健度极高。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="gg-dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">经常裁撤的边缘 Product/Messaging 创新小组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：容易进入“Google Graveyard”（被砍产品公墓），项目面临战略性撤裁风险。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchGgDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('gg-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与 Code Craftsmanship 文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (极佳 WLB)</h3>
+              <p>
+                普遍下班时间在 <strong style="color: #2563eb;">18:00 - 18:30</strong>。顶尖食堂与无死角福利保障。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>极度重视 Code Review 与设计</h3>
+              <p>
+                采用严格的 Readability 认证。强调极致的代码可读性、单元测试覆盖率与 API 规范。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Googleliness 价值观</h3>
+              <p>
+                注重团队协作、开放分享与谦逊沟通（Googley），拒绝 Toxic 工作环境。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Google 技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>LeetCode Hard 算法 Think Aloud</h3>
+              <p>
+                必考：<strong style="color: #2563eb;">复杂图论、DP、高级数据结构（Segment Tree/Trie）</strong>，边写边清楚表达思路。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>System Design ( MapReduce / Spanner / Borg )</h3>
+              <p>
+                重点防守：<strong style="color: #059669;">海量数据分布、一致性 Hash、CAP 权衡与故障容错机制</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Googleliness 行为面试</h3>
+              <p>
+                用 STAR 法则清晰表达跨团队冲突解决与技术选型思考。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要 Google 资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备 Google 的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

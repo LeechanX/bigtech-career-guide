@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 快手求职情报｜职级薪资、Kwai/主站/可灵AI红黑榜 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 快手最新求职情报：K3/K4/K5 职级薪资 Package 构成、免费三餐与音视频/Feed流工程风气。动态交互对比 主站算法/快手电商/可灵 AI 引擎等推荐部门，避坑边缘试错组，提供 ACM 手撕与 Feed 流面试 SOP。"
+  >
+
+  <meta name="keywords" content="快手薪资, 快手K4, 快手主站推荐, 可灵AI, 快手电商, 音视频算法, 快手面试">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/kuaishou/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>快手（Kuaishou）求职情报百科</h1>
+          <p>
+            透视快手音视频、推荐算法与大模型（可灵 AI）风气。提供<strong style="color: #2563eb;">职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">部门红黑榜动态矩阵</strong>，
+            帮你算清高 Package 与福利，锁定主站搜推与 AI 生态，<strong style="color: #dc2626;">避开边缘撤裁组</strong>。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>1. 快手职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同 K 职级，查看现金 Base、期权与三餐福利：</p>
+
+          <style>
+            .ks-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="ks-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchKsLevel('k3')">K3B / K4A (校招 / 初级对标2-1)</button>
+              <button class="level-btn" onclick="switchKsLevel('k4b')">K4B (资深 / 社招对标阿里P7/字节2-2)</button>
+              <button class="level-btn" onclick="switchKsLevel('k5')">K5A / K5B (TL / 架构专家)</button>
+            </div>
+
+            <div id="ks-panel-k3" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">35W - 52W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">福利 & 餐饮</div>
+                  <div class="data-value">免费三薪餐 + 能量下午茶</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">房补补贴</div>
+                  <div class="data-value" style="color: #2563eb;">1,000 - 1,500 元 / 月</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ks-panel-k4b" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">65W - 100W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票占比</div>
+                  <div class="data-value">约 20% - 30%（4年归属）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">晋升空间</div>
+                  <div class="data-value" style="color: #2563eb;">年度绩效优秀可快速升 K5</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ks-panel-k5" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">110W - 180W+ / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">RSU 股票占比</div>
+                  <div class="data-value">35%+（带团队/背业务战果）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">核心职责</div>
+                  <div class="data-value" style="color: #2563eb;">带小组 / 背推荐留存或电商 GMV</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchKsLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('ks-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>2. 快手部门红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看推荐投递与高危避坑业务组：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchKsDept('recommend')">🟢 推荐投递部门（核心主站/可灵AI/电商变现）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchKsDept('avoid')">🔴 高危避坑部门（频繁试错/高内耗边缘组）</button>
+          </div>
+
+          <div class="dept-box">
+            <div id="ks-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">主站算法 & Feed 流 (推荐 / 广告 / 搜推引擎)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：快手流量与工程核心护城河。<strong style="color: #059669;">拥有超高并发推荐引擎、万亿级特征计算，技术积累极深</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">AI 实验室 & 可灵 AI (大模型 / 视频生成 Kling)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：快手顶尖 AI 算力与生成式 AI 主战场（可灵 AI 领跑全球视频生成）。<strong style="color: #059669;">战略投入高、溢价 Package 充沛</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">快手电商 (直播电商 / 供应链 / 交易履约)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：快手变现造血大本营，GMV 持续高增长，业务线奖金池丰厚。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ks-dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">低 PMF 创新短视频小应用组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：试错节奏快，半年无增长数据即面临项目解散改组。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">边缘运营支持与长尾定制组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：技术复用率低，日常背高频需求与加班包袱，绩效展现空间有限。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchKsDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('ks-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与工程落地文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (1095 强节奏)</h3>
+              <p>
+                普遍下班时间在 <strong style="color: #2563eb;">21:30 - 22:00</strong>。大小周取消但核心业务上线期节奏紧凑。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>数据说服与极致工程</h3>
+              <p>
+                崇尚“痴迷客户、追求极致”。用 A/B Test 留存与转化指标作为评价唯一标准。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>半年度绩效考核</h3>
+              <p>
+                保持 S/A/B/C 分布，绩效直接绑定年终奖与股票授予解禁。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>快手技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>ACM 模式手撕算法</h3>
+              <p>
+                必考：<strong style="color: #2563eb;">双指针、动态规划、图论与滑动窗口</strong>，极其注重边界异常处理。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>C++ / Java / Go 高并发底层</h3>
+              <p>
+                追问重点：<strong style="color: #059669;">Feed 流读写扩散、Redis HotKey 缓存倾斜治理、Kafka 零拷贝与高吞吐</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>音视频与多模态AI</h3>
+              <p>
+                针对音视频/AI 岗位：<strong style="color: #2563eb;">H.265/AV1 编解码、GPU 推理加速、Diffusion 生成模型优化</strong>。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要快手资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备快手各部门的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

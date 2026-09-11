@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 蚂蚁集团求职情报｜职级薪资、支付宝/蚂蚁国际/红黑榜 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 蚂蚁集团最新求职情报：P6/P7/P8 职级薪资 Package 构成、iHome 房补与金融级高可用风气。动态交互对比 支付宝核心/蚂蚁国际/OceanBase 等推荐 BG，避坑边缘创新试错组，提供 Java 底层与分布式事务面试 SOP。"
+  >
+
+  <meta name="keywords" content="蚂蚁集团薪资, 支付宝职级, 蚂蚁金服待遇, 蚂蚁国际, OceanBase, 金融级高并发, 蚂蚁面试">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/antgroup/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>蚂蚁集团（Ant Group）求职情报百科</h1>
+          <p>
+            透视蚂蚁集团金融科技与全球化业务风气。提供<strong style="color: #2563eb;">职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">部门红黑榜动态矩阵</strong>，
+            帮你算清 Package 与福利，锁定支付宝与蚂蚁国际核心组，<strong style="color: #dc2626;">避开边缘试错团队</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：职级薪资模拟器 -->
+      <section class="section">
+        <div class="container">
+          <h2>1. 蚂蚁职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同职级，查看现金 Base、RSU 股票占比与金融级福利：</p>
+
+          <style>
+            .ant-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="ant-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchAntLevel('p6')">P6 (资深工程师 / 校招SSP)</button>
+              <button class="level-btn" onclick="switchAntLevel('p7')">P7 (技术专家 / 核心骨干)</button>
+              <button class="level-btn" onclick="switchAntLevel('p8')">P8 (高级专家 / 部门 TL)</button>
+            </div>
+
+            <div id="ant-panel-p6" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">45W - 70W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">福利与补贴</div>
+                  <div class="data-value">餐补 + 夜宵券 + 团队 Building</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">iHome 首套房无息贷</div>
+                  <div class="data-value" style="color: #2563eb;">最高 30W 额度</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ant-panel-p7" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + SER 期权 Package</div>
+                  <div class="data-value" style="color: #059669;">80W - 135W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">SER 期权占比</div>
+                  <div class="data-value">约 25% - 40%（4年归属）</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">iHome 首套房无息贷</div>
+                  <div class="data-value" style="color: #2563eb;">最高 50W 额度</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ant-panel-p8" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + SER 期权 Package</div>
+                  <div class="data-value" style="color: #059669;">140W - 230W+ / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">SER 期权占比</div>
+                  <div class="data-value">40%+ 强期权杠杆</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">团队管理与责任</div>
+                  <div class="data-value" style="color: #2563eb;">背金融级 SLA 稳定性指标</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchAntLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('ant-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：部门红黑榜对比矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. 蚂蚁事业群红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看推荐投递与高危避坑业务组：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchAntDept('recommend')">🟢 推荐投递 BU（造血核心/海外出海/硬核基建）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchAntDept('avoid')">🔴 高危避坑 BU（频繁试错/高内耗/收缩边缘）</button>
+          </div>
+
+          <div class="dept-box">
+            <div id="ant-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">支付宝事业群核心（支付结算 / 数字互联 / 商家服务）</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：蚂蚁绝对的“造血大本营”。拥有超大规模高并发、极致资金安全与高可用场景，<strong style="color: #059669;">奖金池稳定，技术壁垒极高</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">蚂蚁国际 (Ant International / WorldFirst / 出海)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：蚂蚁集团战略第一增长曲线，东南亚及全球跨境支付业务爆发增长。<strong style="color: #059669;">HC 充沛、业务激励强，适合想拿海外战功的工程师</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">OceanBase & 基础架构 / 安全科技</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：自主可控分布式数据库与安全风控。技术风气纯粹，<strong style="color: #059669;">深度沉淀 Paxos 协议、分布式存储与隐私计算</strong>。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="ant-dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">频繁调整的无 PMF 创新社交/社区组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：<strong>高危重灾区！</strong> 蚂蚁多次尝试社交/生活圈孵化均受阻，项目寿命短，<strong style="color: #dc2626;">半年无成果即面临改组裁撤</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">传统外包型定制化交付技术组</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：偏乙方运维交付，技术复用率低，KPI 考核被动，缺乏晋升说服力。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchAntDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('ant-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与金融级严谨文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (995 节奏)</h3>
+              <p>
+                普遍下班时间在 <strong style="color: #2563eb;">21:00 - 21:30</strong>。双 11 与财神节大促期间封闭作战。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>资金安全“零容忍”</h3>
+              <p>
+                极度重视故障防控。引入“资损防控”机制，任何线上 P0/P1 资金故障均有一票否决制。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>361 绩效分布</h3>
+              <p>
+                保持阿里系经典的 361 绩效比率（3.75 优秀、3.5 占大头、<strong style="color: #dc2626;">3.25 无年终奖警告</strong>）。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>蚂蚁技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Java 生态与并发并发深挖</h3>
+              <p>
+                必考：<strong style="color: #2563eb;">JVM 垃圾回收策略、JUC 锁机制（AQS / ConcurrentHashMap）与 Spring/SOFA 框架源码</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>分布式事务与强一致性</h3>
+              <p>
+                面试官必追问：<strong style="color: #059669;">TCC 分布式事务、Seata 机制、Saga 补偿、OceanBase Paxos 共识算法与二阶段提交</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>高并发防守与容灾</h3>
+              <p>
+                重点防守：<strong style="color: #2563eb;">资金资损防控、多活数据中心（单元化架构）、Sentinel 熔断与流量限流</strong>。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要蚂蚁集团资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备蚂蚁集团各事业群的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

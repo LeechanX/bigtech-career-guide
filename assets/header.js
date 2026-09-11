@@ -14,14 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
             <a href="/companies/bytedance/">字节跳动（推荐部门/风气/对标）</a>
             <a href="/companies/tencent/">腾讯</a>
             <a href="/companies/alibaba/">阿里巴巴</a>
-            <a href="/companies/xiaohongshu/">DeepSeek</a>
+            <a href="/companies/deepseek/">DeepSeek</a>
+            <a href="/companies/kimi/">月之暗面</a>
+            <a href="/companies/minimax/">MiniMax</a>
             <a href="/companies/xiaohongshu/">小红书</a>
-            <a href="/companies/xiaohongshu/">拼多多</a>
-            <a href="/companies/xiaohongshu/">美团</a>
+            <a href="/companies/pinduoduo/">拼多多</a>
+            <a href="/companies/meituan/">美团</a>
+            <a href="/companies/antgroup/">蚂蚁</a>
+            <a href="/companies/apple/">Apple</a>
             <a href="/companies/google/">Google</a>
             <a href="/companies/meta/">Meta</a>
             <a href="/companies/amazon/">Amazon</a>
-            <a href="/companies/microsoft/">Microsoft</a>
+            <a href="/companies/kuaishou/">快手</a>
+            <a href="/companies/netease/">网易</a> 
+            <a href="/companies/baidu/">百度</a>            
           </div>
         </details>
 
@@ -41,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
           <div>
             <a href="/guides/international-student-job-timeline/">留学生求职 Timeline</a>
             <a href="/guides/international-student-bigtech-job/">留学生进大厂完整指南</a>
-            <a href="/guides/return-to-china-job/">留学生回国求职 SOP</a>
             <a href="/guides/international-student-internship/">大厂实习投递指南</a>
           </div>
         </details>

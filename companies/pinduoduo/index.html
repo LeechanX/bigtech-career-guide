@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2026-2027 拼多多求职情报｜职级薪资、TEMU/主站/高危避坑部门 - BigTechCareer</title>
+
+  <meta
+    name="description"
+    content="汇总 2026-2027 拼多多最新求职情报：18个月高Base薪资 Package 构成、11116 真实作息与硬核考勤风气。动态交互对比 TEMU 海外出海/主站核心搜推等推荐部门，避坑频繁试错创新组，提供 ACM 模式算法与极致工程面试 SOP。"
+  >
+
+  <meta name="keywords" content="拼多多薪资, 拼多多职级, 拼多多11116, TEMU待遇, 拼多多面试, 拼多多推荐算法, 拼多多避坑组">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://bigtechcareer.com/companies/pinduoduo/">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+
+<!-- 公共 Header 动态挂载点 -->
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+
+    <div class="page-main">
+
+      <section class="hero">
+        <div class="container">
+          <h1>拼多多（Pinduoduo / TEMU）求职情报百科</h1>
+          <p>
+            透视拼多多内部极致高效与高回报的工程文化。提供<strong style="color: #2563eb;">职级薪资模拟 DashBoard</strong>与<strong style="color: #059669;">部门红黑榜动态矩阵</strong>，
+            帮你算清高 Base 现金流，锁定 TEMU 海外出海与主站核心组，<strong style="color: #dc2626;">避开高频试错撤裁组</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 动态交互 1：职级薪资模拟器 -->
+      <section class="section">
+        <div class="container">
+          <h2>1. 拼多多职级与薪资结构模拟器</h2>
+          <p class="section-intro">点击不同职级（以业界通用对标为主），查看现金 Base 构成与高额年终奖：</p>
+
+          <style>
+            .pdd-dashboard { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; margin: 15px 0 25px; }
+            .level-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+            .level-btn { flex: 1; padding: 10px; font-weight: 700; border: 1px solid #e5e7eb; background: #f8fafc; color: #475569; border-radius: 6px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .level-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+            
+            .data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .data-card { background: #f8fafc; padding: 14px; border-radius: 8px; border-left: 4px solid #2563eb; }
+            .data-card.green { border-left-color: #059669; background: #f0fdf4; }
+            .data-label { font-size: 12px; color: #64748b; font-weight: 600; margin-bottom: 4px; }
+            .data-value { font-size: 16px; font-weight: 700; color: #0f172a; }
+
+            .level-panel { display: none; }
+            .level-panel.active { display: block; }
+
+            @media (max-width: 640px) { .data-grid { grid-template-columns: 1fr; } }
+          </style>
+
+          <div class="pdd-dashboard">
+            <div class="level-tabs">
+              <button class="level-btn active" onclick="switchPddLevel('p5')">初级 / 校招顶薪 (对标P5/2-1)</button>
+              <button class="level-btn" onclick="switchPddLevel('p6p7')">骨干 / 社招主力 (对标P6-P7/2-2)</button>
+              <button class="level-btn" onclick="switchPddLevel('p8')">TL / 技术专家 (对标P8/3-1)</button>
+            </div>
+
+            <!-- 校招/初级 面板 -->
+            <div id="pdd-panel-p5" class="level-panel active">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">40W - 65W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">薪资结构特点</div>
+                  <div class="data-value">16 - 18 个月高 Base 现金</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">福利 & 餐补</div>
+                  <div class="data-value" style="color: #2563eb;">免费两餐 / 夜宵全包</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 社招骨干 面板 -->
+            <div id="pdd-panel-p6p7" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 Package 范围</div>
+                  <div class="data-value" style="color: #059669;">75W - 130W / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">股票/期权占比</div>
+                  <div class="data-value">高月薪 Base + 限制性股票</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">节奏与兑现</div>
+                  <div class="data-value" style="color: #2563eb;">年终奖现金给够（硬核交付）</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 专家 面板 -->
+            <div id="pdd-panel-p8" class="level-panel">
+              <div class="data-grid">
+                <div class="data-card green">
+                  <div class="data-label">现金 + 股票 Package</div>
+                  <div class="data-value" style="color: #059669;">150W - 250W+ / 年</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">股票/期权占比</div>
+                  <div class="data-value">30%+ 强股票杠杆</div>
+                </div>
+                <div class="data-card">
+                  <div class="data-label">团队管理与责任</div>
+                  <div class="data-value" style="color: #2563eb;">带小组 / 直接对业务战果负责</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchPddLevel(lvl) {
+              document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.level-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('pdd-panel-' + lvl).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <!-- 动态交互 2：部门红黑榜对比矩阵 -->
+      <section class="section">
+        <div class="container">
+          <h2>2. 拼多多部门红黑榜动态矩阵</h2>
+          <p class="section-intro">切换查看“推荐入坑”与“高危避坑”业务组的技术栈与风气内幕：</p>
+
+          <style>
+            .dept-tabs { display: flex; gap: 10px; margin: 15px 0; }
+            .dept-tab-btn { flex: 1; padding: 12px; font-size: 15px; font-weight: 700; border: 1px solid #e5e7eb; background: #f9fafb; color: #4b5563; border-radius: 8px; cursor: pointer; text-align: center; transition: all 0.2s; }
+            .dept-tab-btn.green-tab.active { background: #059669; color: #ffffff; border-color: #059669; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+            .dept-tab-btn.red-tab.active { background: #dc2626; color: #ffffff; border-color: #dc2626; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2); }
+
+            .dept-box { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #ffffff; }
+            .dept-panel { display: none; }
+            .dept-panel.active { display: block; }
+
+            .dept-card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+            .dept-card { padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+            .dept-card.pass-card { background: #f0fdf4; border-color: #a7f3d0; }
+            .dept-card.fail-card { background: #fef2f2; border-color: #fecaca; }
+
+            .dept-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+            .dept-name.green-text { color: #047857; }
+            .dept-name.red-text { color: #b91c1c; }
+
+            .dept-desc { font-size: 14px; color: #334155; line-height: 1.6; }
+          </style>
+
+          <div class="dept-tabs">
+            <button class="dept-tab-btn green-tab active" onclick="switchPddDept('recommend')">🟢 推荐投递部门（核心出海 / 造血主站 / 高预算）</button>
+            <button class="dept-tab-btn red-tab" onclick="switchPddDept('avoid')">🔴 高危避坑部门（高频赛马 / 砍线重灾 / 高压维护）</button>
+          </div>
+
+          <div class="dept-box">
+            <!-- 推荐部门面板 -->
+            <div id="pdd-dept-panel-recommend" class="dept-panel active">
+              <div class="dept-card-list">
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">TEMU (拼多多跨境出海 / 搜索推荐 & 供应链)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：公司绝对的**第一核心增长引擎**！全球爆发式增长，<strong style="color: #059669;">HC 充沛、预算无上限，战功出得快，晋升与奖金倾斜极大</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">主站核心 (主站搜推 / 广告系统 / 交易风控)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：国内电商业务的造血大本营。具备超大规模高并发、极致吞吐与架构压榨场景，<strong style="color: #059669;">年终奖池极硬，技术壁垒扎实</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card pass-card">
+                  <div class="dept-name green-text">基础架构 / 大数据平台 (Data Platform)</div>
+                  <div class="dept-desc">
+                    <strong>推荐理由</strong>：支撑 TEMU 与国内主站的底层算力与存储基建。<strong style="color: #059669;">技术风气纯粹，远离前台业务纷争</strong>，适合深耕分布式与高性能存储的工程师。
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 避坑部门面板 -->
+            <div id="dept-panel-avoid" class="dept-panel">
+              <div class="dept-card-list">
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">低 PMF 创新试错组 (边缘孵化项目)</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：<strong>高危重灾区！</strong> 拼多多“赛马”极其冷酷，3 个月数据达不到指标整组撤裁，<strong style="color: #dc2626;">组员拿低绩效或被迫离职</strong>。
+                  </div>
+                </div>
+
+                <div class="dept-card fail-card">
+                  <div class="dept-name red-text">高频值班/边缘支持组 (客服技术/运维极度监控)</div>
+                  <div class="dept-desc">
+                    <strong>避坑理由</strong>：技术杠杆低，日常背高压包袱，考勤与 On-call 极其残酷，技术成长与绩效回报不匹配。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function switchPddDept(type) {
+              document.querySelectorAll('.dept-tab-btn').forEach(btn => btn.classList.remove('active'));
+              document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
+              event.target.classList.add('active');
+              document.getElementById('pdd-dept-panel-' + type).classList.add('active');
+            }
+          </script>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>工作作息与硬核保密文化</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>工作作息 (11116 极致节奏)</h3>
+              <p>
+                标准作息为 <strong style="color: #2563eb;">11:00 - 23:00（一周工作 6 天）</strong>。拒绝虚假会议与废话PPT，全员聚焦代码与数据结果。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>匿名花名与极致保密</h3>
+              <p>
+                内部采用全员花名制，跨部门信息隔离极其严格。一切用数据与业务交付说话。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>无套路现金回报</h3>
+              <p>
+                没有虚浮的关怀与套路，把激励直接体现在 <strong style="color: #059669;">高 Base 现金与高额年终奖</strong> 上，适合目标极其明确的务实求职者。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>拼多多技术面试偏好与防守 SOP</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>笔试/面试 ACM 模式手撕</h3>
+              <p>
+                手撕算法要求极高。4 道 ACM 模式编程题（重点：<strong style="color: #2563eb;">动态规划、贪心、BFS/DFS 与自定义边界条件</strong>），严查代码漏点。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Java / Go 高并发底层深挖</h3>
+              <p>
+                面试官极其喜欢追问 <strong style="color: #059669;">MySQL B+Tree 索引与 MVCC 隔离、Redis 跳表与 HotKey 治理、Kafka 顺序消费与Exactly Once</strong>。
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>项目持续“追问到底”</h3>
+              <p>
+                拒绝抽象名词堆砌。重点追问 <strong style="color: #2563eb;">为什么做这个选型？极限 QPS 压测瓶颈在哪里？遭遇故障怎么降级防守？</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <h2>需要拼多多/TEMU 资深考官进行模考或推荐选组？</h2>
+          <p>
+            如果你正在准备拼多多各部门的技术面试，希望评估简历竞争力或进行全真模拟防守，
+            欢迎扫描右侧二维码或添加微信沟通。
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧公共 Sidebar 挂载点 -->
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 BigTechCareer · 大厂求职与职业发展指南
+  </div>
+</footer>
+
+<!-- 公共脚本动态注入 -->
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>
