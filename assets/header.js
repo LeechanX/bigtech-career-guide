@@ -32,13 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
         </details>
 
         <details>
-          <summary>岗位题库</summary>
+          <summary>成功上岸案例</summary>
           <div>
-            <a href="/interview/backend/">后端工程师（System Design / 高并发八股）</a>
-            <a href="/interview/client/">客户端工程师（iOS / Android / 性能优化）</a>
-            <a href="/interview/frontend/">前端工程师（渲染 / 异步设计）</a>
-            <a href="/interview/ai/">AI / Agent 工程师（RAG / LLM / 转岗路线）</a>
-            <a href="/interview/algorithm-project/">算法与项目深挖（LeetCode 频次 / 模板）</a>
+            <a href="/interview/backend/">后端方向 backend</a>
+            <a href="/interview/client/">客户端方向 client</a>
+            <a href="/interview/frontend/">前端方向 frontend</a>
+            <a href="/interview/ai/">AI Agent方向</a>
           </div>
         </details>
 
