@@ -5,25 +5,25 @@ const path = require('path');
 const TRACKS = [
   {
     id: 'backend',
-    title: '后端架构 1v1 辅导真实案例库 (Case Studies)',
+    title: '后端架构 1v1 辅导真实案例库',
     desc: '从高并发死局、中间件灾难到架构重构，揭秘大厂后端真实面评与辅导逆转实录。',
     categories: ['简历重构', '面评逆向', '薪资博弈', '职级跨越', '赛道转型']
   },
   {
     id: 'frontend',
-    title: '前端工程 1v1 辅导真实案例库 (Case Studies)',
+    title: '前端工程 1v1 辅导真实案例库',
     desc: '从渲染性能瓶颈到前端基建重构，揭秘字节、美团前端核心岗真实面评与诊断实录。',
     categories: ['简历重构', '面评逆向', '薪资博弈', '职级跨越', '赛道转型']
   },
   {
     id: 'client',
-    title: '客户端工程师 1v1 辅导真实案例库 (Case Studies)',
+    title: '客户端工程师 1v1 辅导真实案例库',
     desc: 'iOS/Android 内存泄漏、帧率调优实战复盘，突破 Native 架构师晋升瓶颈。',
     categories: ['简历重构', '面评逆向', '薪资博弈', '职级跨越', '赛道转型']
   },
   {
     id: 'ai',
-    title: 'AI / Agent 工程师 1v1 辅导真实案例库 (Case Studies)',
+    title: 'AI / Agent 工程师 1v1 辅导真实案例库',
     desc: '从 CRUD 逃顶转型到 RAG / Agent 架构重构，揭秘 AI 新锐大厂高薪 Offer 逆袭实录。',
     categories: ['简历重构', '面评逆向', '薪资博弈', '职级跨越', '赛道转型']
   }
@@ -95,7 +95,7 @@ function buildTrack(track) {
         <div class="container">
           <h1 style="color: #fff; margin-bottom: 12px; font-size: 32px;">${track.title.split(' 1v1')[0]} (Case Studies)</h1>
           <p style="color: #cbd5e1; font-size: 16px; line-height: 1.6; margin: 0;">
-            放弃八股文死记硬背。用咨询公司的上帝视角，深度拆解 <strong>真实客户</strong><br>
+            放弃八股文死记硬背。用咨询公司的上帝视角，深度拆解 <strong>真实例子</strong><br>
             是如何跨越系统设计考核黑盒，实现 <span style="color: #facc15; font-weight: bold;">Offer 薪资与职级越级</span> 的。
           </p>
         </div>
@@ -201,8 +201,8 @@ function buildTrack(track) {
             \${c.tags.map(t => \`<span class="case-tag">\${t}</span>\`).join('')}
           </div>
           <div class="case-meta">
-            <div class="meta-row"><span class="meta-label">👤 客户画像：</span> \${c.clientProfile}</div>
-            <div class="meta-row"><span class="meta-label">🏆 逆转战果：</span> <strong style="color: #059669;">\${c.resultOffer}</strong></div>
+            <div class="meta-row"><span class="meta-label">👤 画像：</span> \${c.clientProfile}</div>
+            <div class="meta-row"><span class="meta-label">🏆 战果：</span> <strong style="color: #059669;">\${c.resultOffer}</strong></div>
           </div>
           <p class="case-desc">\${c.desc}</p>
           <a href="\${c.url}" class="read-more">深度查阅复盘与防守细节 →</a>
