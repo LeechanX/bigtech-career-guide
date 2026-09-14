@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>留学生屡遭拒信，靠ReAct实战拿下MiniMax - BigTechCareer</title>
+  <meta name="description" content="记录一位零项目经历的海外CS硕士同学，在遭遇20多封拒信后，如何通过推荐大厂视角的ReAct模式项目、划定考点重点与精读架构资料，成功逆袭拿到 MiniMax 高薪Offer。">
+  
+  <meta name="keywords" content="赛道转型, 简历重构, 面评逆向">
+  
+  <meta name="client-profile" content="海外 CS 硕士应届生，零项目经历惨遭 20+ 拒信，想做 Agent 开发屡屡碰壁">
+  <meta name="result-offer" content="靠 ReAct 项目实战逆袭 MiniMax 的 Agent 开发 Offer（年薪 60万+）">
+
+  <link rel="canonical" href="https://bigtechcareer.com/interview/ai/items/overseas-student-minimax-agent.html">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+    <div class="page-main">
+
+      <section class="hero" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 40px 0;">
+        <div class="container">
+          <div style="font-size: 14px; color: #38bdf8; font-weight: 700; margin-bottom: 8px;">CASE STUDY · 1V1 辅导复盘</div>
+          <h1 style="color: #ffffff; font-size: 28px; line-height: 1.4; margin-bottom: 16px;">
+            留学生屡遭拒信，靠ReAct实战逆袭MiniMax
+          </h1>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">赛道转型</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">简历重构</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">面评逆向</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          
+          <style>
+            .summary-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 20px; margin-bottom: 32px; }
+            .info-box { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; padding: 18px; margin: 20px 0; }
+            .resource-box { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 14px; color: #92400e; }
+            .step-title { font-size: 18px; font-weight: 700; color: #0f172a; margin-top: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+            .highlight-text { background: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #854d0e; }
+          </style>
+
+          <div class="summary-box">
+            <div style="font-weight: 700; color: #166534; font-size: 16px; margin-bottom: 8px;">🏆 诊断战报摘要</div>
+            <div style="font-size: 15px; color: #15803d; line-height: 1.6;">
+              <strong>同学画像：</strong>海外名校 CS 硕士在读，完全没有出彩的技术项目经历。投递国内大厂和 AI 独角兽的 Agent 开发岗位，连续收到了 20 多封拒信，一度非常焦虑。<br>
+              <strong>最终战果：</strong>通过从零搭建大厂视角的 ReAct 模式 Agent 项目，结合考点划重点与资料精读，成功逆袭拿下 MiniMax 的 Agent 开发 Offer（<span class="highlight-text">Base + 股票折合 60万+ 年薪</span>）。
+            </div>
+          </div>
+
+          <!-- 1. 同学背景介绍 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px;">
+            👤 1. 同学背景介绍
+          </h2>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            这位兄弟是海外名校的计算机硕士。虽然学校背景不错，但之前一直在搞理论课程，简历上几乎没有任何能拿得出手的工业级项目。眼看着国内求职季开始，他一心想做 AI Agent 开发，结果投出去的简历全军覆没，连个初筛都没过。
+          </p>
+
+          <!-- 2. 需求 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🎯 2. 辅导需求
+          </h2>
+          <ul style="font-size: 15px; color: #334155; line-height: 1.8; padding-left: 20px;">
+            <li>希望能进 MiniMax、月之暗面这类 AI 新贵公司做 Agent 业务开发。</li>
+            <li>急需一个真正符合大厂工程标准的项目来填补简历空白，摆脱“零项目经历被连挂”的被动局面。</li>
+          </ul>
+
+          <!-- 3. 问题分析 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🔍 3. 诊断与问题拆解
+          </h2>
+          <div class="info-box">
+            <p style="margin: 0 0 10px 0; font-size: 15px; color: #1e293b; font-weight: 700;">梳理这位兄弟惨遭连续拒绝的原因，主要卡在这三个地方：</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.7;">
+              <li><strong style="color: #dc2626;">简历零实际项目：</strong>简历上只有学校的几行课程作业，HR 和面试官抓不到任何可以考核的技术细节，在筛选环节就被直接淘汰。</li>
+              <li><strong style="color: #dc2626;">不懂真实 Agent 怎么写：</strong>只在论文里看过大模型概念，根本不知道大厂生产环境里是怎么用 ReAct 模式（推理加行动循环）来控制工具调用的。</li>
+              <li><strong style="color: #dc2626;">复习毫无方向：</strong>因为心里没底，盲目花大量精力去背大模型的数学推导公式，结果大厂 Agent 开发岗位面试考的全是代码调优、工具容错和上下文控制。</li>
+            </ol>
+          </div>
+
+          <!-- 4. 优化思路 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🛠️ 4. 优化思路与实操
+          </h2>
+
+          <div class="step-title">第一步：找准大厂视角项目，手把手带他做 ReAct 架构开发</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>既然没有项目经历，就必须一步到位做最符合大厂招聘审美的实战项目。我直接给他找了一个在大厂实际业务中非常硬核的 ReAct 模式 Agent 开发项目。带他从零动手，实现“思考 - 行动 - 观察”的完整循环，重点解决模型在调用外部 API 时返回格式错乱、死循环以及工具调用超时的异常处理。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            直接发给他一份我整理的<strong>《大厂视角 ReAct 模式 Agent 实战开发模版与源码》</strong>，带他把思维链设计、工具解析器和状态回滚代码逐行敲了一遍。
+          </div>
+
+          <div class="step-title">第二步：划定核心考点，终止无意义死记硬背</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>帮他梳理出 MiniMax 这类公司面试时最看重的实操考点，让他把注意力全部集中在工程细节上。要求他重点攻克这几块：ReAct 循环中防止死循环的死锁检测、结构化输出的强校验、多轮对话里的上下文裁剪算法，以及提示词注入防护。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            帮他划出了<strong>《Agent 开发高频工程考点清单与防守策略》</strong>，让他彻底抛弃死记硬背公式的误区，专门复习大厂关注的实践问题。
+          </div>
+
+          <div class="step-title">第三步：推荐必读架构资料，提升技术表达深度</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>为了让他面试时能表达出超出一个应届生深度的技术视野，我给他指定了几份业界顶尖的 Agent 架构读物，让他深入理解业界在控制大模型不确定性上的主流做法。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            推荐并提供了<strong>《ReAct 经典论文工程化落地图解》</strong>以及几篇大厂内部关于 ReAct 模式在复杂业务中落地的架构笔记，并安排了 2 场模拟面试，帮他把项目经历讲得头头是道。
+          </div>
+
+          <!-- 5. 启示 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 36px; margin-bottom: 16px;">
+            💡 5. 导师启示
+          </h2>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; font-size: 15px; color: #1e40af; line-height: 1.7;">
+            应届生零项目经历、屡遭拒信不可怕。想要冲刺 MiniMax 这类顶级 AI 新贵，选对符合大厂工程视角（比如 ReAct 模式）的项目是破局的关键。把大模型调用当成业务开发，把工具调用与容错细节吃透，就能从连续失败中实现逆袭。
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 BigTechCareer · 大厂求职与职业发展指南</div>
+</footer>
+
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>

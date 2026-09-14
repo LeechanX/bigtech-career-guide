@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5年Android攻克卡顿与OOM，拿下腾讯11级 - BigTechCareer</title>
+  <meta name="description" content="记录一位5年Android开发同学如何摆脱业务搬砖标签，通过重构APM性能监控体系、死磕ART虚拟机与内存治理，成功逆袭拿下腾讯11级高薪Offer。">
+  
+  <meta name="keywords" content="简历重构, 面评逆向, 职级跨越">
+  
+  <meta name="client-profile" content="5年 Android 经验，中厂 UI 业务开发背景，多次在大厂底层性能面试环节被问倒">
+  <meta name="result-offer" content="成功攻克 Native 性能调优，拿下腾讯 11 级 Offer（85万年薪）">
+
+  <link rel="canonical" href="https://bigtechcareer.com/interview/client/items/android-performance-tencent.html">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+    <div class="page-main">
+
+      <section class="hero" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 40px 0;">
+        <div class="container">
+          <div style="font-size: 14px; color: #38bdf8; font-weight: 700; margin-bottom: 8px;">CASE STUDY · 1V1 辅导复盘</div>
+          <h1 style="color: #ffffff; font-size: 28px; line-height: 1.4; margin-bottom: 16px;">
+            5年Android攻克卡顿与OOM，拿下腾讯11级
+          </h1>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">简历重构</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">面评逆向</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">职级跨越</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          
+          <style>
+            .summary-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 20px; margin-bottom: 32px; }
+            .info-box { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; padding: 18px; margin: 20px 0; }
+            .resource-box { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 14px; color: #92400e; }
+            .step-title { font-size: 18px; font-weight: 700; color: #0f172a; margin-top: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+            .highlight-text { background: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #854d0e; }
+          </style>
+
+          <div class="summary-box">
+            <div style="font-weight: 700; color: #166534; font-size: 16px; margin-bottom: 8px;">🏆 诊断战报摘要</div>
+            <div style="font-size: 15px; color: #15803d; line-height: 1.6;">
+              <strong>同学画像：</strong>5年 Android 开发经验，之前一直在中型公司做电商 App 的 UI 业务逻辑。感觉遭遇瓶颈，尝试冲刺大厂核心 Native 组，但面试总被深挖性能调优难住。<br>
+              <strong>最终战果：</strong>彻底撕掉业务搬砖标签，重构性能监控体系，成功拿下腾讯 11 级 Offer（<span class="highlight-text">Base + 年终折合 85 万年薪</span>）。
+            </div>
+          </div>
+
+          <!-- 1. 同学背景介绍 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px;">
+            👤 1. 同学背景介绍
+          </h2>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            这位兄弟有 5 年 Android 开发经验，之前在一家中型公司做电商 App 的 UI 业务开发。写了几年界面和网络请求之后，感觉日常工作都是重复劳动，准备跳槽到大厂冲刺资深客户端开发岗位。
+          </p>
+
+          <!-- 2. 需求 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🎯 2. 辅导需求
+          </h2>
+          <ul style="font-size: 15px; color: #334155; line-height: 1.8; padding-left: 20px;">
+            <li>冲刺腾讯 11 级或者美团 L8 级别的 Native 核心组。</li>
+            <li>之前简历投大厂核心组屡屡不过，面试只要遇到卡顿监控、内存溢出排查和虚拟机底层就接不住，希望能把底层硬实力补齐。</li>
+          </ul>
+
+          <!-- 3. 问题分析 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🔍 3. 诊断与问题拆解
+          </h2>
+          <div class="info-box">
+            <p style="margin: 0 0 10px 0; font-size: 15px; color: #1e293b; font-weight: 700;">梳理这位同学的简历和面试表现，发现主要存在这几个问题：</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.7;">
+              <li><strong style="color: #dc2626;">简历缺乏硬核亮点：</strong>写满了“使用网络库请求数据”、“使用图片库加载图片”、“实现复杂列表布局”。在大厂面试官眼里这就是纯粹的页面搬砖，给不出高薪定级。</li>
+              <li><strong style="color: #dc2626;">调优全凭感觉：</strong>被问到页面卡顿和内存溢出怎么排查，只会回答“看一下工具”，说不清 60 帧流畅度怎么保障、渲染机制的原理，也分析不出丢帧产生的根源。</li>
+              <li><strong style="color: #dc2626;">底层原理不扎实：</strong>面试官深追虚拟机垃圾回收机制、进程间通信的内存映射原理，或者事件分发与物理刷新机制时，回答断断续续，讲不清楚。</li>
+            </ol>
+          </div>
+
+          <!-- 4. 优化思路 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🛠️ 4. 优化思路与实操
+          </h2>
+
+          <div class="step-title">第一步：重构性能调优项目，把业务搬砖改成架构建设</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>大厂客户端团队最看重性能调优功底。让他把项目中零散的修复工作，提炼重构成<strong style="color: #2563eb;">“千万级用户 App 卡顿与内存监控治理体系”</strong>。要求他在代码层接入基于渲染机制的帧率监听，通过 Hook 技术捕获主线程超时的堆栈。针对内存问题，接入在线监控，利用内存快照裁剪算法，实现线上内存泄漏与堆外内存超限的自动捕捉上报。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            直接把大厂内部在用的<strong>《Android 性能调优与 APM 监控组件落地指南》</strong>发给了他，再加上一套脱敏的 Native Hook 离线分析源码，让他参照这套标准去重构自己的项目履历。
+          </div>
+
+          <div class="step-title">第二步：补强 Native 底层知识点</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>想拿高薪定级，必须能从操作系统和虚拟机层面解释问题。让他去死磕虚拟机的垃圾回收过程、图片内存分配演变、进程间通信的内存映射原理，以及视图绘制与屏幕刷新的完整物理链路。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            整理了一份<strong>《Android 底层原理与虚拟机高频追问清单》</strong>，教他如何在面试中主动引导面试官聊“从系统渲染服务到屏幕刷新的完整工作流”。
+          </div>
+
+          <div class="step-title">第三步：话术防守演练与全真模考</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>大厂面试官特别喜欢追问复杂异常问题。教他采用“现象捕捉 -> 堆栈抓取 -> 线下复现 -> 架构级防护”的思考框架来回答大厂高频面试题。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            拿出一份<strong>腾讯 11 级 Native 开发面试打分表</strong>，做了一场 1v1 模拟面试，逐句矫正他在讲内存溢出治理和线程死锁时的排查思路。
+          </div>
+
+          <!-- 5. 启示 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 36px; margin-bottom: 16px;">
+            💡 5. 导师启示
+          </h2>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; font-size: 15px; color: #1e40af; line-height: 1.7;">
+            做客户端千万不要只满足于画界面和调接口。随着框架成熟，大厂最缺的是懂底层渲染、懂内存治理、懂卡顿排查的 Native 调优高手。把你做过的业务用性能监控体系的视角重新梳理一遍，就能直接打出强通过信号。
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 BigTechCareer · 大厂求职与职业发展指南</div>
+</footer>
+
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>
