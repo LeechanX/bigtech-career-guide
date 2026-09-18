@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4年iOS攻克主线程卡顿与内存泄漏，拿到美团Offer - BigTechCareer</title>
+  <meta name="description" content="记录一位4年iOS开发同学，如何从写UI界面转变为重构卡顿监控与内存治理链路，成功拿到美团高级客户端开发Offer。">
+  
+  <meta name="keywords" content="简历重构, 面评逆向, 赛道转型">
+  
+  <meta name="client-profile" content="4年 iOS 经验，中厂混编业务背景，面试屡屡卡在 RunLoop 底层与线上性能监控">
+  <meta name="result-offer" content="成功攻克 iOS 性能治理，拿下美团高级客户端开发 Offer（55万年薪）">
+
+  <link rel="canonical" href="https://bigtechcareer.com/interview/client/items/ios-performance-meituan.html">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main>
+  <div class="page-layout">
+    <div class="page-main">
+
+      <section class="hero" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 40px 0;">
+        <div class="container">
+          <div style="font-size: 14px; color: #38bdf8; font-weight: 700; margin-bottom: 8px;">CASE STUDY · 1V1 辅导复盘</div>
+          <h1 style="color: #ffffff; font-size: 28px; line-height: 1.4; margin-bottom: 16px;">
+            4年iOS攻克主线程卡顿与内存泄漏，拿到美团Offer
+          </h1>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">简历重构</span>
+            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">面评逆向</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          
+          <style>
+            .summary-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 20px; margin-bottom: 32px; }
+            .info-box { background: #f8fafc; border-left: 4px solid #2563eb; border-radius: 0 8px 8px 0; padding: 18px; margin: 20px 0; }
+            .resource-box { background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 14px; color: #92400e; }
+            .step-title { font-size: 18px; font-weight: 700; color: #0f172a; margin-top: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+            .highlight-text { background: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #854d0e; }
+          </style>
+
+          <div class="summary-box">
+            <div style="font-weight: 700; color: #166534; font-size: 16px; margin-bottom: 8px;">🏆 诊断战报摘要</div>
+            <div style="font-size: 15px; color: #15803d; line-height: 1.6;">
+              <strong>同学画像：</strong>4 年 iOS 开发经验，主要在二线公司做电商 App 的 UI 业务。代码写得挺规范，但面试大厂核心组时，总是在主线程 RunLoop 卡顿排查和内存泄漏治理上卡壳。<br>
+              <strong>最终战果：</strong>重新梳理性能监控体系，补齐线上卡顿捕获与内存治理经验，成功拿到美团高级 iOS 开发 Offer（<span class="highlight-text">Base + 年终折合 55 万年薪</span>）。
+            </div>
+          </div>
+
+          <!-- 1. 同学背景介绍 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 16px;">
+            👤 1. 同学背景介绍
+          </h2>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            这位兄弟工作 4 年，之前一直在一家中型公司做 iOS 业务开发，平时主要用 Objective-C 和 Swift 混编写页面、做动画和接接口。技术功底不错，但随着业务稳定，感觉平时做的工作偏重复，想跳槽到美团、快手这类大厂的 Native 核心团队。
+          </p>
+
+          <!-- 2. 需求 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🎯 2. 辅导需求
+          </h2>
+          <ul style="font-size: 15px; color: #334155; line-height: 1.8; padding-left: 20px;">
+            <li>冲刺美团、快手等大厂的高级 iOS 开发岗位。</li>
+            <li>投简历通过率还行，但到了二面和三面，一问到线上卡顿监控机制、RunLoop 状态捕获、内存溢出治理时就接不住，急需把这一块的工程细节补齐。</li>
+          </ul>
+
+          <!-- 3. 问题分析 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🔍 3. 诊断与问题拆解
+          </h2>
+          <div class="info-box">
+            <p style="margin: 0 0 10px 0; font-size: 15px; color: #1e293b; font-weight: 700;">梳理完这位同学的项目和面试表达，主要发现这三个短板：</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 15px; color: #334155; line-height: 1.7;">
+              <li><strong style="color: #dc2626;">过于依赖线下排查工具：</strong>遇到卡顿和内存问题，习惯用 Xcode 自带的 Instruments 工具线下看，说不清线上（Production）环境下怎么做到无感捕获调用堆栈。</li>
+              <li><strong style="color: #dc2626;">底层运行机制说不透：</strong>聊到 RunLoop 的 Observer 监听原理、autoreleasepool 的释放时机，以及 Swift 和 OC 混编时的动态派发损耗，表达不够连贯。</li>
+              <li><strong style="color: #dc2626;">简历项目缺乏数据支持：</strong>简历上写了“优化页面流畅度”、“解决内存泄漏”，但拿不出主线程阻塞时间减少、丢帧率降低等具体的量化数据。</li>
+            </ol>
+          </div>
+
+          <!-- 4. 优化思路 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; margin-bottom: 16px;">
+            🛠️ 4. 优化思路与实操
+          </h2>
+
+          <div class="step-title">第一步：搭建线上卡顿与主线程监测机制</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>大厂团队很看重线上主动防御能力。让他把项目里零散的性能优化，重构成一套完整的线上卡顿监控方案。基于 RunLoop 观察者（CFRunLoopObserver）监听主线程状态变化，结合子线程定时器监测超时卡死。针对卡顿瞬间，调用堆栈抓取算法记录现场。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            直接丢给他一份<strong>《iOS 线上主线程卡顿捕捉与堆栈还原代码模版》</strong>，带他把 RunLoop 状态机和信号量超时机制逐行实现。
+          </div>
+
+          <div class="step-title">第二步：重构内存治理与大图解码优化</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>针对常见的内存泄漏和内存暴涨，让他学习大厂通用的内存治理逻辑。引入基于野指针检测和回溯栈追踪的方案，重点解决高清大图加载时的内存占用、UITableView 深度复用时的循环引用，以及 Swift 闭包捕获造成的内存泄漏。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            发给他一份<strong>《iOS 内存泄漏排查与图片预解码压缩实战笔记》</strong>，教他如何通过降低内存峰值来避免线上崩溃。
+          </div>
+
+          <div class="step-title">第三步：准备高频考点与全真模拟面试</div>
+          <p style="font-size: 15px; color: #334155; line-height: 1.7;">
+            <strong>优化方案与原因：</strong>整理美团等大厂 iOS 面试高频问题，包括混编派发机制、GCD 信号量死锁排查、Category 底层加载逻辑等。教他用“现象捕捉 -> 线下复现 -> 架构防守 -> 指标量化”的框架回答问题。
+          </p>
+          <div class="resource-box">
+            <strong>📦 提供的独家资源：</strong><br>
+            安排了 2 场模拟面试，拿<strong>美团 iOS 核心组技术考点打分表</strong>做针对性演练，修正他在回答锁机制和离屏渲染时的表达漏洞。
+          </div>
+
+          <!-- 5. 启示 -->
+          <h2 style="font-size: 20px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 36px; margin-bottom: 16px;">
+            💡 5. 导师启示
+          </h2>
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 20px; font-size: 15px; color: #1e40af; line-height: 1.7;">
+            做 iOS 开发不能止步于画界面和调接口。随着客户端架构成熟，大厂面试越来越看重你在卡顿监控、内存治理和流畅度保障上的工程落地方案。把平时解决过的 Bug 总结成一套可监控、可量化的性能治理经验，就能在技术面试中展现出足够的胜任力。
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+    <aside id="site-sidebar" class="page-sidebar"></aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 BigTechCareer · 大厂求职与职业发展指南</div>
+</footer>
+
+<script src="/assets/header.js"></script>
+<script src="/assets/sidebar.js"></script>
+</body>
+</html>
